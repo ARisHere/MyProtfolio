@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Md. Ahadur Rohman Ahad</title>
+    <style>
+        /* Global Styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #6B73FF 10%, #000DFF 100%);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+        }
+
+        @keyframes gradientBG {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            margin-bottom: 10px;
+        }
+
+        p {
+            margin-bottom: 20px;
+        }
+
+        a {
+            text-decoration: none;
+            color: #337ab7;
+        }
+
+        a:hover {
+            color: #23527c;
+        }
+
+        /* Header Styles */
+        .header {
+            background-color: rgba(255, 255, 255, 0.8);
+            color: #000;
+            padding: 20px;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .header img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 2px solid #337ab7;
+            margin: 20px;
+        }
+
+        .header .info {
+            margin-left: 20px;
+        }
+
+        .header .info h1 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .header .info p {
+            font-size: 18px;
+            color: #000;
+        }
+
+        /* Navigation Styles */
+        .nav {
+            background-color: #337ab7;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .nav a {
+            color: #fff;
+            margin: 0 15px;
+            font-size: 18px;
+        }
+
+        .nav a:hover {
+            color: #23527c;
+        }
+
+        /* Section Styles */
+        .section {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            scroll-margin-top: 70px;
+            border-radius: 10px;
+        }
+
+        .section h2 {
+            margin-top: 0;
+            font-size: 24px;
+            color: #337ab7;
+        }
+
+        .section ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .section li {
+            margin-bottom: 20px;
+        }
+
+        .section li h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .section li p {
+            font-size: 16px;
+            color: #666;
+        }
+
+        /* Social Media Styles */
+        .social-media {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        .social-media li {
+            margin: 10px;
+        }
+
+        .social-media a {
+            font-size: 24px;
+            color: #337ab7;
+        }
+
+        .social-media a:hover {
+            color: #23527c;
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .section {
+                margin-bottom: 10px;
+            }
+
+            .header {
+                flex-direction: column;
+            }
+
+            .header img {
+                margin: 0;
+                margin-bottom: 20px;
+            }
+
+            .nav {
+                display: flex;
+                flex-direction: column;
+            }
+
+            .nav a {
+                margin: 10px 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <img src="ARisHERE.png" alt="Profile Picture">
+        <div class="info">
+            <h1>Md. Ahadur Rohman Ahad</h1>
+            <p>B.Sc Engineering in CSE</p>
+            <a href="mailto:go2arahad@gmail.com">E-mail</a> |
+            <a href="https://www.linkedin.com/in/arishere" target="_blank">LinkedIn</a> |
+            <a href="https://github.com/arishere" target="_blank">GitHub</a> |
+            <a href="[your-google-drive-cv-link]" target="_blank">Download CV</a>
+        </div>
+    </header>
+    <nav class="nav">
+        <a href="#about">About</a>
+        <a href="#work-experience">Work Experience</a>
+        <a href="#education">Education</a>
+        <a href="#projects">Projects</a>
+        <a href="#research">Research</a>
+        <a href="#achievements">Achievements</a>
+        <a href="#certifications">Certifications</a>
+        <a href="#community">Community</a>
+        <a href="#skills">Skills</a>
+    </nav>
+    <main>
+        <section id="about" class="section">
+            <h2>About</h2>
+            <p>Hello, I recently completed my Bachelor of Science in Computer Science and Engineering at the Bangladesh Army University of Engineering & Technology (BAUET). Currently, I am working on research in the fields of Machine Learning and Bioinformatics. As part of my research, I am focusing on disease detection and its prognosis. Outside of the tech world, I enjoy challenging myself to develop new skills. My hobbies include volunteering with multiple organizations.</p>
+        </section>
+        <section id="work-experience" class="section">
+            <h2>Work Experience</h2>
+            <ul>
+                <li>
+                    <h3>Intern — Software Development</h3>
+                    <p>May 2023 - August 2023<br>SheBa Web Technology LLC</p>
+                </li>
+                <li>
+                    <h3>Intern — Industrial Attachment</h3>
+                    <p>May 2023<br>Bangladesh Research and Education Network (BdREN)</p>
+                </li>
+            </ul>
+        </section>
+        <section id="education" class="section">
+            <h2>Education</h2>
+            <ul>
+                <li>
+                    <h3>SSC | GPA-4.91</h3>
+                    <p>2017<br>Masjid Mission Academy (School & College) Rajshahi</p>
+                </li>
+                <li>
+                    <h3>HSC | GPA-4.92</h3>
+                    <p>2019<br>Shah Makhdum College Rajshahi</p>
+                </li>
+                <li>
+                    <h3>Bachelor of Science | Computer Science and Engineering</h3>
+                    <p>2024<br>Bangladesh Army University of Engineering & Technology</p>
+                </li>
+            </ul>
+        </section>
+        <section id="projects" class="section">
+            <h2>Projects</h2>
+            <ul>
+                <li>
+                    <h3><a href="https://github.com/ARisHere/Library-Management-Systemm" target="_blank">Library Management System</a></h3>
+                    <p>Java | Fall 2021</p>
+                </li>
+                <li>
+                    <h3><a href="https://github.com/ARisHere/The-Modern-city-Originator" target="_blank">The Modern City Originator</a></h3>
+                    <p>Java, Android Studio | Summer 2022</p>
+                </li>
+                <li>
+                    <h3><a href="https://github.com/ARisHere/Docsoln" target="_blank">DocSoln</a></h3>
+                    <p>HTML, CSS, JavaScript, Django | Summer 2022</p>
+                </li>
+                <li>
+                    <h3><a href="https://github.com/ARisHere/AgriStairs" target="_blank">ArgiStairs</a></h3>
+                    <p>Android Studio, Machine Learning | Summer 2023</p>
+                </li>
+                <li>
+                    <h3><a href="https://github.com/mdarikrayhan/professionalbdTeam" target="_blank">PeofessionalBD</a></h3>
+                    <p>Android Studio, Node JS | June 2023</p>
+                </li>
+                <li>
+                    <h3><a href="https://github.com/ARisHere/SheBa-IT-Academy" target="_blank">SheBa IT Academy</a></h3>
+                    <p>Android Studio, Firebase | August 2023</p>
+                </li>
+            </ul>
+        </section>
+        <section id="research" class="section">
+            <h2>Research</h2>
+            <ul>
+                <li>
+                    <h3>Crop disease detection using Convolution Neural Network</h3>
+                    <p>Machine Learning | Fall 2022</p>
+                </li>
+                <li>
+                    <h3>A Review Paper on MRI-based Brain Tumor Detection</h3>
+                    <p>Machine Learning | Summer 2023</p>
+                </li>
+                <li>
+                    <h3>Prognosis and Therapeutic Insights of Thalassemia</h3>
+                    <p>Bioinformatics | Final Year Thesis</p>
+                </li>
+            </ul>
+        </section>
+        <section id="achievements" class="section">
+            <h2>Achievements</h2>
+            <ul>
+                <li>
+                    <h3>Champion | Programming Context Mind Storm 4.0</h3>
+                    <p>Bangladesh Army University of Engineering & Technology</p>
+                </li>
+                <li>
+                    <h3>Champion | Business Plan Presentation BAUET Business Fest 2.0</h3>
+                    <p>Bangladesh Army University of Engineering & Technology</p>
+                </li>
+                <li>
+                    <h3>2nd Runners Up | Software Development Mind Storm 4.0</h3>
+                    <p>Bangladesh Army University of Engineering & Technology</p>
+                </li>
+                <li>
+                    <h3>2nd Runners Up | Software Development Mind Storm 5.0</h3>
+                    <p>Bangladesh Army University of Engineering & Technology</p>
+                </li>
+            </ul>
+        </section>
+        <section id="certifications" class="section">
+            <h2>Certifications, Workshop & Training</h2>
+            <ul>
+                <li>
+                    <h3>Red Cross/Crescent Basic and First Aid Training</h3>
+                    <p>2016 & 2018 | Bangladesh Red Crescent Society (BDRCS)</p>
+                </li>
+                <li>
+                    <h3>14th Red Crescent Youth Camp</h3>
+                    <p>2017 | Bangladesh Red Crescent Society</p>
+                </li>
+                <li>
+                    <h3>Introduction to IoT</h3>
+                    <p>June 2022 | Cisco Networking Academy</p>
+                </li>
+                <li>
+                    <h3>Introduction to Cybersecurity</h3>
+                    <p>June 2022 | Cisco Networking Academy</p>
+                </li>
+                <li>
+                    <h3>Programming Essentials in Python</h3>
+                    <p>July 2022 | Cisco Networking Academy</p>
+                </li>
+                <li>
+                    <h3>Battalion Camping</h3>
+                    <p>December 2022 | 35 BNCC Battalion BAUET Platoon</p>
+                </li>
+                <li>
+                    <h3>Virtual Workshop on Bioinformatics</h3>
+                    <p>April 2024 | BioChemiX Club</p>
+                </li>
+                <li>
+                    <h3>Empowering Lives, Embracing and Accessible Thalassemia Treatment for All</h3>
+                    <p>May 2024 | Rotary Club</p>
+                </li>
+            </ul>
+        </section>
+        <section id="community" class="section">
+            <h2>Community Involvement</h2>
+            <ul>
+                <li>
+                    <h3>Red Crescent Youth</h3>
+                    <p>October 2015 - August 2018 | Bangladesh Red Crescent Society</p>
+                </li>
+                <li>
+                    <h3>District Leader</h3>
+                    <p>May 2022 - Feb 2023 | ICT Olympiad Bangladesh</p>
+                </li>
+                <li>
+                    <h3>Fire and Rescue Volunteer</h3>
+                    <p>April 2016 - present | Fire Service and Civil Defence</p>
+                </li>
+                <li>
+                    <h3>Cadet</h3>
+                    <p>November 2020 - present | BNCC, BAUET Mohasthan Regiment</p>
+                </li>
+                <li>
+                    <h3>HR Secretary</h3>
+                    <p>June 2023 - present | BAUET Computer Society</p>
+                </li>
+                <li>
+                    <h3>Organizing Secretary</h3>
+                    <p>December 2023 - Present | BAUET Computer Society</p>
+                </li>
+            </ul>
+        </section>
+        <section id="skills" class="section">
+            <h2>Skills</h2>
+            <ul>
+                <li>
+                    <h3>Languages</h3>
+                    <p>Bengali (Native), English (B1)</p>
+                </li>
+                <li>
+                    <h3>Programming</h3>
+                    <p>HTML, CSS, C, C++, JAVA, Python, MySQL</p>
+                </li>
+                <li>
+                    <h3>IDE</h3>
+                    <p>Android Studio, Visual Studio Code, Anaconda, Google Colab</p>
+                </li>
+                <li>
+                    <h3>Document Creation</h3>
+                    <p>Microsoft Office, LaTeX</p>
+                </li>
+                <li>
+                    <h3>Others</h3>
+                    <p>Event Management, Team Management</p>
+                </li>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>© 2024 Md. Ahadur Rohman Ahad. All rights reserved.</p>
+    </footer>
+    <ul class="social-media">
+        <li><a href="https://www.linkedin.com/in/arishere" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+        <li><a href="https://github.com/arishere" target="_blank"><i class="fab fa-github"></i></a></li>
+        <li><a href="mailto:go2arahad@gmail.com"><i class="fas fa-envelope"></i></a></li>
+    </ul>
+</body>
+
+</html>

@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Md. Ahadur Rohman Ahad</title>
+    <style>
+        /* Global Styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            margin-bottom: 10px;
+        }
+        p {
+            margin-bottom: 20px;
+        }
+        a {
+            text-decoration: none;
+            color: #337ab7;
+        }
+        a:hover {
+            color: #23527c;
+        }
+        /* Header Styles */
+        .header {
+            background-color: #fff;
+            color: #000;
+            padding: 20px;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .header img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border-color: #337ab7;
+            margin: 20px;
+        }
+        .header .info {
+            margin-left: 20px;
+        }
+        .header .info h1 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        .header .info p {
+            font-size: 18px;
+            color: #000;
+        }
+        /* Navigation Styles */
+        .nav {
+            background-color: #337ab7;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+        .nav a {
+            color: #fff;
+            margin: 0 15px;
+            font-size: 18px;
+        }
+        .nav a:hover {
+            color: #23527c;
+        }
+        /* Section Styles */
+        .section {
+            background-color: #fff;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            scroll-margin-top: 70px;
+        }
+        .section h2 {
+            margin-top: 0;
+            font-size: 24px;
+            color: #337ab7;
+        }
+        .section ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .section li {
+            margin-bottom: 20px;
+        }
+        .section li h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        .section li p {
+            font-size: 16px;
+            color: #666;
+        }
+        /* Social Media Styles */
+        .social-media {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+        .social-media li {
+            margin: 10px;
+        }
+        .social-media a {
+            font-size: 24px;
+            color: #337ab7;
+        }
+        .social-media a:hover {
+            color: #23527c;
+        }
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+        }
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .section {
+                margin-bottom: 10px;
+            }
+            .header {
+                flex-direction: column;
+            }
+            .header img {
+                margin: 0;
+                margin-bottom: 20px;
+            }
+            .nav {
+                display: flex;
+                flex-direction: column;
+            }
+            .nav a {
+                margin: 10px 0;
+            }
+        }
+            .section {
+                background-color: #fff; /* Default background color */
+                padding: 20px;
+                margin-bottom: 20px;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                scroll-margin-top: 70px;
+            }
+
+
+
+        /* Particle Background */
+        #particles-js {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            background-color: #f9f9f9;
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+</head>
+<body>
+    <div id="particles-js"></div>
+    <header class="header">
+        <img src="ARisHERE.png" alt="Profile Picture">
+        <div class="info">
+            <h1>Md. Ahadur Rohman Ahad</h1>
+            <p>B.Sc Engineering in CSE</p>
+            <a>+8801739-411518</a> |
+            <a href="mailto:go2arahad@gmail.com">E-mail</a> |
+            <a href="https://www.linkedin.com/in/arishere" target="_blank">LinkedIn</a> |
+            <a href="https://github.com/arishere" target="_blank">GitHub</a> |
+            <a href="https://drive.google.com/file/d/1uT-myyUMnayWEDScN97gNgR5Z1VhomKJ/view?usp=sharing" target="_blank">Download CV</a>
+        </div>
+    </header>
+    <nav class="nav">
+        <a href="#about">About</a>
+        <a href="#work-experience">Work Experience</a>
+        <a href="#education">Education</a>
+        <a href="#projects">Projects</a>
+        <a href="#research">Research</a>
+        <a href="#achievements">Achievements</a>
+        <a href="#certifications">Certifications</a>
+        <a href="#community">Community</a>
+        <a href="#skills">Skills</a>
+    </nav>
+    <main>
+        <section id="about" class="section">
+            <h2>About</h2>
+            <p>Hello, I recently completed my Bachelor of Science in Computer Science and Engineering at the Bangladesh Army University of Engineering & Technology (BAUET). Currently, I am working on research in the fields of Machine Learning and Bioinformatics. As part of my research, I am focusing on disease detection and its prognosis. Outside of the tech world, I enjoy challenging myself to develop new skills. My hobbies include volunteering with multiple organizations.</p>
+        </section>
+        <section id="work-experience" class="section">
+            <h2>Work Experience</h2>
+            <ul>
+                <li>
+                    <h3>Intern - Software Development</h3>
+                    <p>SheBa Web Technology LLC | May 2023 - August 2023</p>
+                    <p><a href="#" target="_blank">Website</a></p>
+                </li>
+                <li>
+                    <h3>Intern - Diverse theoretical and hands-on activity</h3>
+                    <p>Bangladesh Research and Education Network (BdREN) | May 2023</p>
+                    <p><a href="#" target="_blank">Website</a></p>
+                </li>
+            </ul>
+        </section>
+        <section id="education" class="section">
+            <h2>Education</h2>
+            <ul>
+                <li>
+                    <h3>SSC | GPA-4.91</h3>
+                    <p>Masjid Mission Academy (School & College) | 2017 | Rajshahi</p>
+                </li>
+                <li>
+                    <h3>HSC | GPA-4.92</h3>
+                    <p>Shah Makhdum College | 2019 | Rajshahi</p>
+                </li>
+                <li>
+                    <h3>Bachelor of Science | Computer Science and Engineering</h3>
+                    <p>Bangladesh Army University of Engineering & Technology (BAUET) | 2024 | Qadirabad, Natore-6431</p>
+                </li>
+            </ul>
+        </section>
+        <section id="projects" class="section">
+            <h2>Projects</h2>
+            <ul>
+                <li>
+                    <h3>Student Management System C</h3>
+                    <p>Bangladesh Army University of Engineering & Technology (BAUET) | Fall 2020</p>
+                </li>
+                <li>
+                    <h3>Search Engine on Data Structure - C++</h3>
+                    <p>Bangladesh Army University of Engineering and Technology (BAUET) | Fall 2021</p>
+                    <p><a href="#" target="_blank">GitHub Link</a></p>
+                </li>
+                <li>
+                    <h3>Contact Management System to find Blood Donner - C++</h3>
+                    <p>Bangladesh Army University of Engineering & Technology (BAUET) | Summer 2021</p>
+                    <p><a href="#" target="_blank">GitHub Link</a></p>
+                </li>
+                <li>
+                    <h3>Library Management System - Java</h3>
+                    <p>Bangladesh Army University of Engineering & Technology (BAUET) | Fall 2021</p>
+                    <p><a href="#" target="_blank">GitHub Link</a></p>
+                </li>
+                <li>
+                    <h3>Change Maker - Java, Android Studio</h3>
+                    <p>Bangladesh Army University of Engineering & Technology (BAUET) | Fall 2021</p>
+                    <p><a href="#" target="_blank">GitHub Link</a></p>
+                </li>
+                <li>
+                    <h3>The Modern City Originator - Java, Android Studio</h3>
+                    <p>Bangladesh Army University of Engineering & Technology (BAUET) | Summer 2022</p>
+                    <p><a href="#" target="_blank">GitHub Link</a></p>
+                </li>
+                <li>
+                    <h3>DocSoln - HTML, CSS, Java Script, Django</h3>
+                    <p>Bangladesh Army University of Engineering & Technology (BAUET) | Summer 2022</p>
+                    <p><a href="#" target="_blank">GitHub Link</a></p>
+                </li>
+                <li>
+                    <h3>ArgiStairs - Android Studio, Machine Learning</h3>
+                    <p>Bangladesh Army University of Engineering & Technology (BAUET) | Summer 2023</p>
+                    <p><a href="#" target="_blank">GitHub Link</a></p>
+                </li>
+                <li>
+                    <h3>PeofessionalBD - Android Studio, Node JS</h3>
+                    <p>SheBa Web Technology LLC | June 2023</p>
+                    <p><a href="#" target="_blank">GitHub Link</a></p>
+                </li>
+                <li>
+                    <h3>SheBa IT Academy - Android Studio, Firebase</h3>
+                    <p>SheBa Web Technology LLC | August 2023</p>
+                    <p><a href="#" target="_blank">GitHub Link</a></p>
+                </li>
+            </ul>
+        </section>
+        <section id="research" class="section">
+            <h2>Research</h2>
+            <ul>
+                <li>
+                    <h3>Crop disease detection using Convolution Neural Network - Machine Learning</h3>
+                    <p>Bangladesh Army University of Engineering & Technology (BAUET) | Fall 2022 | Qadirabad, Natore-6431</p>
+                </li>
+                <li>
+                    <h3>A Review Paper on MRI-based Brain Tumor Detection - Machine Learning</h3>
+                    <p>Bangladesh Army University of Engineering & Technology (BAUET) | Summer 2023 | Qadirabad, Natore-6431</p>
+                </li>
+                <li>
+                    <h3>Prognosis and Therapeutic Insights of Thalassemia - Bioinformatics</h3>
+                    <p>Bangladesh Army University of Engineering & Technology (BAUET) | Final Year Thesis | Qadirabad, Natore-6431</p>
+                </li>
+            </ul>
+        </section>
+        <section id="achievements" class="section">
+            <h2>Achievements</h2>
+            <ul>
+                <li>
+                    <h3>Champion | Programming Context</h3>
+                    <p>Bangladesh Army University of Engineering & Technology (BAUET) | Mind Storm 4.0 | Qadirabad, Natore-6431</p>
+                </li>
+                <li>
+                    <h3>Champion | Business Plan Presentation</h3>
+                    <p>Bangladesh Army University of Engineering & Technology (BAUET) | BAUET Business Fest 2.0 | Qadirabad, Natore-6431</p>
+                </li>
+                <li>
+                    <h3>2nd Runners Up | Software Development</h3>
+                    <p>Bangladesh Army University of Engineering & Technology (BAUET) | Mind Storm 4.0 | Qadirabad, Natore-6431</p>
+                </li>
+                <li>
+                    <h3>2nd Runners Up | Software Development</h3>
+                    <p>Bangladesh Army University of Engineering & Technology (BAUET) | Mind Storm 5.0 | Qadirabad, Natore-6431</p>
+                </li>
+            </ul>
+        </section>
+        <section id="certifications" class="section">
+            <h2>Certifications & Training</h2>
+            <ul>
+                <li>
+                    <h3>Red Cross/Crescent Basic and First Aid Training</h3>
+                    <p>Bangladesh Red Crescent Society (BDRCS) | 2016 & 2018 | Rajshahi City Unit</p>
+                </li>
+                <li>
+                    <h3>14th Red Crescent Youth Camp</h3>
+                    <p>Bangladesh Red Crescent Society | 2017 | Shah Makhdum College, Rajshahi</p>
+                </li>
+                <li>
+                    <h3>Introduction to IoT</h3>
+                    <p>Cisco Networking Academy | June 2022 | GP Academy</p>
+                </li>
+                <li>
+                    <h3>Introduction to Cybersecurity</h3>
+                    <p>Cisco Networking Academy | June 2022 | GP Academy</p>
+                </li>
+                <li>
+                    <h3>Programming Essentials in Python</h3>
+                    <p>Cisco Networking Academy | July 2022 | GP Academy</p>
+                </li>
+                <li>
+                    <h3>Battalion Camping</h3>
+                    <p>35 BNCC Battalion | December 2022 | BAUET Platoon</p>
+                </li>
+                <li>
+                    <h3>Virtual Workshop on Bioinformatics</h3>
+                    <p>BioChemiX Club | April 2024 | Rajshahi University</p>
+                </li>
+                <li>
+                    <h3>Empowering Lives, Embracing and Accessible Thalassemia Treatment for All</h3>
+                    <p>Rotary Club | May 2024 | Rajshahi</p>
+                </li>
+            </ul>
+        </section>
+        <section id="community" class="section">
+            <h2>Community Involvement</h2>
+            <ul>
+                <li>
+                    <h3>Red Crescent Youth</h3>
+                    <p>Bangladesh Red Crescent Society | October 2015 - August 2018 | Rajshahi City Unit</p>
+                </li>
+                <li>
+                    <h3>ICT Olympiad Bangladesh</h3>
+                    <p>District Leader | May 2022 - Feb 2023 | Rajshahi</p>
+                </li>
+                <li>
+                    <h3>Change Maker</h3>
+                    <p>Rajshahi City Corporation | March 2020 – Present | Rajshahi</p>
+                </li>
+                <li>
+                    <h3>Fire and Rescue Volunteer</h3>
+                    <p>Fire Service and Civil Defence | April 2016 - present | Rajshahi</p>
+                </li>
+                <li>
+                    <h3>Cadet</h3>
+                    <p>BNCC, BAUET | November 2020 - present | Mohasthan Regiment</p>
+                </li>
+                <li>
+                    <h3>HR Secretary</h3>
+                    <p>BAUET Computer Society | June 2023 - present | Bangladesh Army University of Engineering & Technology (BAUET)</p>
+                </li>
+                <li>
+                    <h3>Organizing Secretary</h3>
+                    <p>BAUET Computer Society | December 2023 - Present | Bangladesh Army University of Engineering & Technology (BAUET)</p>
+                </li>
+            </ul>
+        </section>
+        <section id="skills" class="section">
+            <h2>Skills</h2>
+            <ul>
+                <li>
+                    <h3>Languages:</h3>
+                    <p>Bengali (Native), English (B1)</p>
+                </li>
+                <li>
+                    <h3>Programming:</h3>
+                    <p>HTML, CSS, C, C++, JAVA, Python, MySQL</p>
+                </li>
+                <li>
+                    <h3>IDE:</h3>
+                    <p>Android Studio, Visual Studio Code, Anaconda, Google Celebratory</p>
+                </li>
+                <li>
+                    <h3>Document Creation:</h3>
+                    <p>Microsoft Office, LaTeX</p>
+                </li>
+                <li>
+                    <h3>Others:</h3>
+                    <p>Event Management, Team Management</p>
+                </li>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>© 2024 Md. Ahadur Rohman Ahad. All rights reserved.</p>
+    </footer>
+    <ul class="social-media">
+        <li><a href="https://www.linkedin.com/in/arishere" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+        <li><a href="https://github.com/arishere" target="_blank"><i class="fab fa-github"></i></a></li>
+        <li><a href="mailto:go2arahad@gmail.com"><i class="fas fa-envelope"></i></a></li>
+    </ul>
+
+    <!-- Modals -->
+    <div id="project1-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Project 1: Student Management System C</h2>
+            <p>Details about Student Management System C...</p>
+        </div>
+    </div>
+    <div id="project2-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Project 2: Search Engine on Data Structure - C++</h2>
+            <p>Details about Search Engine on Data Structure - C++...</p>
+        </div>
+    </div>
+
+
+
+    <script>
+        // Smooth Scrolling
+        document.querySelectorAll('.nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Modals
+        const modals = document.querySelectorAll('.modal');
+        const projectLinks = document.querySelectorAll('.project-link');
+        const closeButtons = document.querySelectorAll('.close');
+
+        projectLinks.forEach(link => {
+            link.addEventListener('click', (event) => {
+                event.preventDefault();
+                document.getElementById(link.getAttribute('data-modal')).style.display = 'block';
+            });
+        });
+
+        closeButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                modals.forEach(modal => modal.style.display = 'none');
+            });
+        });
+
+        window.addEventListener('click', (event) => {
+            if (event.target.classList.contains('modal')) {
+                modals.forEach(modal => modal.style.display = 'none');
+            }
+        });
+
+        // Social Media Links
+        document.querySelectorAll('.social-media a').forEach(link => {
+            link.addEventListener('click', event => {
+                event.preventDefault();
+                window.open(link.href, '_blank');
+            });
+        });
+
+        // Initialize particles.js
+        particlesJS("particles-js", {
+            "particles": {
+                "number": {
+                    "value": 80,
+                    "density": {
+                        "enable": true,
+                        "value_area": 800
+                    }
+                },
+                "color": {
+                    "value": "#337ab7"
+                },
+                "shape": {
+                    "type": "circle",
+                    "stroke": {
+                        "width": 0,
+                        "color": "#000000"
+                    },
+                    "polygon": {
+                        "nb_sides": 5
+                    },
+                },
+                "opacity": {
+                    "value": 0.5,
+                    "random": false,
+                    "anim": {
+                        "enable": false,
+                        "speed": 1,
+                        "opacity_min": 0.1,
+                        "sync": false
+                    }
+                },
+                "size": {
+                    "value": 3,
+                    "random": true,
+                    "anim": {
+                        "enable": false,
+                        "speed": 40,
+                        "size_min": 0.1,
+                        "sync": false
+                    }
+                },
+                "line_linked": {
+                    "enable": true,
+                    "distance": 150,
+                    "color": "#337ab7",
+                    "opacity": 0.4,
+                    "width": 1
+                },
+                "move": {
+                    "enable": true,
+                    "speed": 6,
+                    "direction": "none",
+                    "random": false,
+                    "straight": false,
+                    "out_mode": "out",
+                    "bounce": false,
+                    "attract": {
+                        "enable": false,
+                        "rotateX": 600,
+                        "rotateY": 1200
+                    }
+                }
+            },
+            "interactivity": {
+                "detect_on": "canvas",
+                "events": {
+                    "onhover": {
+                        "enable": true,
+                        "mode": "repulse"
+                    },
+                    "onclick": {
+                        "enable": true,
+                        "mode": "push"
+                    },
+                    "resize": true
+                },
+                "modes": {
+                    "grab": {
+                        "distance": 400,
+                        "line_linked": {
+                            "opacity": 1
+                        }
+                    },
+                    "bubble": {
+                        "distance": 400,
+                        "size": 40,
+                        "duration": 2,
+                        "opacity": 8,
+                        "speed": 3
+                    },
+                    "repulse": {
+                        "distance": 200,
+                        "duration": 0.4
+                    },
+                    "push": {
+                        "particles_nb": 4
+                    },
+                    "remove": {
+                        "particles_nb": 2
+                    }
+                }
+            },
+            "retina_detect": true
+        });
+    </script>
+</body>
+</html>
