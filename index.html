@@ -60,19 +60,10 @@
         border: 3px solid #333;
       }
 
-<<<<<<< HEAD
       .profile-info {
         margin-right: 20px;
+        margin-left: 15px;
       }
-=======
-.profile-picture {
-width: 100px;
-height: 100px;
-border-radius: 50%;
-margin-right: 10px;
-border: 3px solid #333;
-}
->>>>>>> 879d952ccd9fd5d701c9a1c7daf1451b9be7ed8f
 
       .profile-info h1 {
         margin: 0;
@@ -80,7 +71,6 @@ border: 3px solid #333;
         color: #333;
       }
 
-<<<<<<< HEAD
       .profile-info p {
         margin: 0;
         font-size: 1rem;
@@ -104,35 +94,6 @@ border: 3px solid #333;
         display: inline-block;
         margin-left: 15px;
       }
-=======
-.profile-info h2 {
-margin: 0;
-margin-left: 10px;
-font-size: 2rem;
-color: #333;
-}
-
-.profile-info p {
-margin: 0;
-margin-left: 10px;
-font-size: 1rem;
-color: #666;
-}
-
-.navigation {
-flex: 1;
-display: flex;
-justify-content: flex-end;
-text-align: right;
-}
-
-.navigation ul {
-text-align: center;
-list-style-type: none;
-padding: 0;
-margin: 0;
-}
->>>>>>> 879d952ccd9fd5d701c9a1c7daf1451b9be7ed8f
 
       .navigation ul li a {
         text-decoration: none;
@@ -143,6 +104,12 @@ margin: 0;
 
       .navigation ul li a:hover {
         color: #007bff; /* Change to your preferred hover color */
+      }
+
+      #phone-number a {
+        position: absolute;
+        top: 30px;
+        right: 50px;
       }
 
       /* Navigation Styles */
@@ -288,6 +255,12 @@ margin: 0;
         }
         .nav a {
           margin: 10px 0;
+          border-bottom: 1px solid rgba(245, 245, 245, 0.2);
+        }
+        #phone-number a {
+          position: relative;
+          top: 0;
+          right: 0;
         }
       }
       .section {
@@ -516,7 +489,7 @@ margin: 0;
     </style>
 
     <title>AR Ahad</title>
-    <link rel="icon" href="ahad.png" type="image/x-icon">
+    <link rel="icon" href="ahad.png" type="image/x-icon" />
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
   </head>
   <body>
@@ -531,11 +504,6 @@ margin: 0;
       </div>
       <nav class="navigation">
         <ul>
-          <li>
-            <a href="tel:+8801739-411518" class="contact-link"
-              >+8801739-411518</a
-            >
-          </li>
           <li>
             <a href="mailto:go2arahad@gmail.com" class="contact-link">E-mail</a>
           </li>
@@ -561,6 +529,11 @@ margin: 0;
               target="_blank"
               class="cv-link"
               >Download CV</a
+            >
+          </li>
+          <li id="phone-number">
+            <a href="tel:+8801739-411518" class="contact-link"
+              >+8801739-411518</a
             >
           </li>
         </ul>
