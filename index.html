@@ -274,6 +274,52 @@
         align-items: center;
         scroll-margin-top: 70px;
       }
+
+      .content {
+            flex: 1;
+            min-width: 300px;
+            padding: 10px;
+        }
+
+        .slider {
+          position: relative;
+            width: 100%;
+            max-width: 800px;
+            margin: 20px auto;
+            overflow: hidden;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .slides {
+            display: flex;
+            transition: transform 0.7s ease-in-out;
+        }
+        .slides img {
+            width: 100%;
+            height: auto;
+        }
+        .navigate {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+        }
+        .navigate button {
+            background-color: rgba(0,0,0,0.5);
+            border: none;
+            color: #fff;
+            padding: 10px;
+            cursor: pointer;
+        }
+        .image-description {
+            text-align: center;
+            margin-top: 10px;
+            color: #666;
+        }
+
+
+
       .skills-container {
         display: flex;
         flex-wrap: wrap;
@@ -613,16 +659,40 @@
     <main>
       <section id="about" class="section">
         <h2>ABOUT</h2>
-        <p class="justified">
-          Hello, I recently completed my Bachelor of Science in Computer Science
-          and Engineering at the Bangladesh Army University of Engineering &
-          Technology (BAUET). Currently, I am working on research in the fields
-          of Machine Learning and Bioinformatics. As part of my research, I am
-          focusing on disease detection and its prognosis. Outside of the tech
-          world, I enjoy challenging myself to develop new skills. My hobbies
-          include volunteering with multiple organizations.
-        </p>
-      </section>
+        <div class="content">
+            <p class="justified">
+                Hello, I recently completed my Bachelor of Science in Computer Science
+                and Engineering at the Bangladesh Army University of Engineering &
+                Technology (BAUET). Currently, I am working on research in the fields
+                of Machine Learning and Bioinformatics. As part of my research, I am
+                focusing on disease detection and its prognosis. Outside of the tech
+                world, I enjoy challenging myself to develop new skills. My hobbies
+                include volunteering with multiple organizations.
+            </p>
+        </div>
+        <div class="slider">
+            <div class="slides">
+                <img src="/source/1.JPG" alt="1">
+                <img src="/source/2.jpg" alt="2">
+                <img src="/source/3.JPG" alt="3">
+                <img src="/source/4.jpg" alt="4">
+                <img src="/source/5.JPG" alt="5">
+                <img src="/source/6.JPG" alt="6">
+                <img src="/source/7.JPG" alt="7">
+                <img src="/source/8.JPG" alt="8">
+                <img src="/source/9.JPG" alt="9">
+                <img src="/source/10.JPG" alt="10">
+            </div>
+            <div class="navigate">
+                <button onclick="prevSlide()">&#10094;</button>
+                <button onclick="nextSlide()">&#10095;</button>
+            </div>
+        </div>
+        <div class="image-description">
+            <p id="description">Description</p>
+        </div>
+    </section>
+
       <section id="work-experience" class="section">
         <h2>WORK EXPERIENCE</h2>
         <ul class="work-container">
@@ -1263,6 +1333,46 @@
       });
     });
   });
+
+  let currentIndex = 0;
+        const slides = document.querySelector('.slides');
+        const descriptions = ["CSE 11th batch with honarable Vice Chancellor, Treasurer, Registrar and Faculty Member",
+        "A part of my Fire & Rescue Volunteer Team with Director General of Fire Service and Civil Defence",
+        "Recieveing farewall from honarable Department Head sir and Course Coordinator mam",
+        "Recieveing prize of 2nd Runner-up for Software Showasing event at Mind Storm 5.0 from honarable Vice Chancellor(At that time) and Department Head",
+        "Indutrial Attachment at Bangladesh Reseach and Education Network (BdREN)",
+        "Recieveing Hall farewall from honarable Vice Chancellor and Provost sir",
+        "Recieveing prize of Champion for Programming Contest event at Mind Storm 4.0 from honarable Vice Chancellor(At that time) and Department Head",
+        "Brief my research base project to the honarable Vice Chancellor(At that time)",
+        "A very proude moment for me to complete my Graduation Dinner with honarable Vice Chancellor sir",
+        "Recieveing prize of Champion for Business Plan Presentation event at BAUET Business Fest 2.0 from honarable Vice Chancellor(At that time) and President of BAUET Business CLub"];
+        
+        function showSlide(index) {
+            const totalSlides = slides.children.length;
+            if (index >= totalSlides) {
+                currentIndex = 0;
+            } else if (index < 0) {
+                currentIndex = totalSlides - 1;
+            } else {
+                currentIndex = index;
+            }
+            const offset = -currentIndex * 100;
+            slides.style.transform = `translateX(${offset}%)`;
+            document.getElementById('description').innerText = descriptions[currentIndex];
+        }
+        
+        function nextSlide() {
+            showSlide(currentIndex + 1);
+        }
+        
+        function prevSlide() {
+            showSlide(currentIndex - 1);
+        }
+
+        setInterval(nextSlide, 3000); // Change slide every 3 seconds
+
+        // Initialize the slider
+        showSlide(currentIndex);
 
       // Initialize particles.js
       particlesJS("particles-js", {
