@@ -107,9 +107,9 @@
       }
 
       #phone-number a {
-        position: absolute;
-        top: 40px;
-        right: 50px;
+        position: relative;
+        align-items: center;
+        display: flex;
       }
 
       /* Navigation Styles */
@@ -478,6 +478,10 @@
         margin: 0;
       }
 
+      .justified {
+            text-align: justify;
+        }
+
       /* Particle Background */
       #particles-js {
         position: fixed;
@@ -552,7 +556,7 @@
     <main>
       <section id="about" class="section">
         <h2>ABOUT</h2>
-        <p>
+        <p class="justified">
           Hello, I recently completed my Bachelor of Science in Computer Science
           and Engineering at the Bangladesh Army University of Engineering &
           Technology (BAUET). Currently, I am working on research in the fields
