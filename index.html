@@ -1,1547 +1,1628 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-    />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <style>
-      /* Global Styles */
-      * {
-        margin: 0px;
-        padding: 0px;
-      }
-      body {
-        font-family: Arial, sans-serif;
-        line-height: 1.5;
-        color: #333;
-        background-color: #f9f9f9;
-      }
-      h1,
-      h2,
-      h3,
-      h4,
-      h5,
-      h6 {
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    /* Global Styles */
+    * {
+      margin: 0px;
+      padding: 0px;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.5;
+      color: #333;
+      background-color: #f9f9f9;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      margin-bottom: 10px;
+    }
+
+    p {
+      margin-bottom: 20px;
+    }
+
+    a {
+      text-decoration: none;
+      color: #337ab7;
+    }
+
+    a:hover {
+      color: #23527c;
+    }
+
+    /* Header Styles */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 30px;
+      background-color: #f0f0f0;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .profile {
+      display: flex;
+      align-items: center;
+    }
+
+    .profile-picture {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      margin-right: 20px;
+      border: 3px solid #333;
+    }
+
+    .profile-info {
+      margin-right: 20px;
+      margin-left: 15px;
+    }
+
+    .profile-info h1 {
+      margin: 0;
+      font-size: 2rem;
+      color: #333;
+    }
+
+    .profile-info p {
+      margin: 0;
+      font-size: 1rem;
+      color: #666;
+    }
+
+    .navigation {
+      flex: 1;
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    .navigation ul {
+      text-align: center;
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .navigation ul li {
+      display: inline-block;
+      margin-left: 15px;
+    }
+
+    .navigation ul li a {
+      text-decoration: none;
+      color: #333;
+      font-size: 1rem;
+      transition: color 0.3s ease;
+    }
+
+    .navigation ul li a:hover {
+      color: #007bff;
+      /* Change to your preferred hover color */
+    }
+
+    #phone-number a {
+      position: relative;
+      align-items: center;
+      display: flex;
+    }
+
+    /* Navigation Styles */
+    .nav {
+      background-color: #333;
+      color: #fff;
+      padding: 10px;
+      text-align: center;
+    }
+
+    .nav a {
+      color: #fff;
+      margin: 0 15px;
+      font-size: 18px;
+    }
+
+    .nav a:hover {
+      transform: scale(1.2);
+      color: #1da1f2;
+    }
+
+    /* Section Styles */
+    .section {
+      padding: 20px;
+      margin: 20px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      scroll-margin-top: 70px;
+    }
+
+    .section h2 {
+      margin-top: 0;
+      font-size: 24px;
+      color: #333;
+    }
+
+    .section ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .section li {
+      margin-bottom: 20px;
+    }
+
+    .section h3 {
+      font-size: 18px;
+      color: #007bff;
+      margin-bottom: 10px;
+    }
+
+    .section li p {
+      font-size: 16px;
+      color: #666;
+    }
+
+    /* Social Media Styles */
+    footer {
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 20px 0;
+      position: relative;
+      bottom: 0;
+      width: 100%;
+    }
+
+    footer p {
+      margin: 0;
+      font-size: 14px;
+    }
+
+    .social-media {
+      list-style-type: none;
+      padding: 0;
+      margin: 10px 0 0 0;
+      display: flex;
+      justify-content: center;
+    }
+
+    .social-media li {
+      margin: 0 10px;
+    }
+
+    .social-media a {
+      color: #fff;
+      font-size: 24px;
+      text-decoration: none;
+      transition: transform 0.3s, color 0.3s;
+    }
+
+    .social-media a:hover {
+      transform: scale(1.2);
+      color: #1da1f2;
+      /* Light blue color for hover effect */
+    }
+
+    .social-media a:active {
+      transform: scale(1.1);
+      color: #0d6efd;
+      /* Darker blue color for active state */
+    }
+
+    /* Modal Styles */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.4);
+    }
+
+    .modal-content {
+      background-color: #fefefe;
+      margin: 15% auto;
+      padding: 20px;
+      border: 1px solid #888;
+      width: 80%;
+    }
+
+    .close {
+      color: #aaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    .close:hover,
+    .close:focus {
+      color: black;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    /* Responsive Styles */
+    @media (max-width: 768px) {
+      .section {
         margin-bottom: 10px;
       }
-      p {
-        margin-bottom: 20px;
-      }
-      a {
-        text-decoration: none;
-        color: #337ab7;
-      }
-      a:hover {
-        color: #23527c;
-      }
-      /* Header Styles */
+
       .header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 30px;
-        background-color: #f0f0f0;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        flex-direction: column;
       }
 
-      .profile {
-        display: flex;
-        align-items: center;
-      }
-
-      .profile-picture {
-        width: 100px;
-        height: 100px;
-        border-radius: 50%;
-        margin-right: 20px;
-        border: 3px solid #333;
-      }
-
-      .profile-info {
-        margin-right: 20px;
-        margin-left: 15px;
-      }
-
-      .profile-info h1 {
+      .header img {
         margin: 0;
-        font-size: 2rem;
-        color: #333;
+        margin-bottom: 20px;
       }
 
-      .profile-info p {
-        margin: 0;
-        font-size: 1rem;
-        color: #666;
-      }
-
-      .navigation {
-        flex: 1;
-        display: flex;
-        justify-content: flex-end;
-      }
-
-      .navigation ul {
-        text-align: center;
-        list-style-type: none;
-        padding: 0;
-        margin: 0;
-      }
-
-      .navigation ul li {
-        display: inline-block;
-        margin-left: 15px;
-      }
-
-      .navigation ul li a {
-        text-decoration: none;
-        color: #333;
-        font-size: 1rem;
-        transition: color 0.3s ease;
-      }
-
-      .navigation ul li a:hover {
-        color: #007bff; /* Change to your preferred hover color */
-      }
-
-      #phone-number a {
-        position: relative;
-        align-items: center;
-        display: flex;
-      }
-
-      /* Navigation Styles */
       .nav {
-        background-color: #333;
-        color: #fff;
-        padding: 10px;
-        text-align: center;
+        display: flex;
+        flex-direction: column;
       }
+
       .nav a {
-        color: #fff;
-        margin: 0 15px;
-        font-size: 18px;
-      }
-      .nav a:hover {
-        transform: scale(1.2);
-        color: #1da1f2;
-      }
-      /* Section Styles */
-      .section {
-        padding: 20px;
-        margin: 20px;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        scroll-margin-top: 70px;
-      }
-      .section h2 {
-        margin-top: 0;
-        font-size: 24px;
-        color: #333;
-      }
-      .section ul {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-      }
-      .section li {
-        margin-bottom: 20px;
-      }
-      .section h3 {
-        font-size: 18px;
-        color: #007bff;
-        margin-bottom: 10px;
-      }
-      .section li p {
-        font-size: 16px;
-        color: #666;
-      }
-      /* Social Media Styles */
-      footer {
-        background-color: #333;
-        color: #fff;
-        text-align: center;
-        padding: 20px 0;
-        position: relative;
-        bottom: 0;
-        width: 100%;
+        margin: 10px 0;
+        border-bottom: 1px solid rgba(245, 245, 245, 0.2);
       }
 
-      footer p {
-        margin: 0;
-        font-size: 14px;
-      }
+    }
 
-      .social-media {
-        list-style-type: none;
-        padding: 0;
-        margin: 10px 0 0 0;
-        display: flex;
-        justify-content: center;
-      }
-
-      .social-media li {
-        margin: 0 10px;
-      }
-
-      .social-media a {
-        color: #fff;
-        font-size: 24px;
-        text-decoration: none;
-        transition: transform 0.3s, color 0.3s;
-      }
-
-      .social-media a:hover {
-        transform: scale(1.2);
-        color: #1da1f2; /* Light blue color for hover effect */
-      }
-
-      .social-media a:active {
-        transform: scale(1.1);
-        color: #0d6efd; /* Darker blue color for active state */
-      }
-
-      /* Modal Styles */
-      .modal {
-        display: none;
-        position: fixed;
-        z-index: 1;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        overflow: auto;
-        background-color: rgba(0, 0, 0, 0.4);
-      }
-      .modal-content {
-        background-color: #fefefe;
-        margin: 15% auto;
-        padding: 20px;
-        border: 1px solid #888;
-        width: 80%;
-      }
-      .close {
-        color: #aaa;
-        float: right;
-        font-size: 28px;
-        font-weight: bold;
-      }
-      .close:hover,
-      .close:focus {
-        color: black;
-        text-decoration: none;
-        cursor: pointer;
-      }
-      /* Responsive Styles */
-      @media (max-width: 768px) {
-        .section {
-          margin-bottom: 10px;
-        }
-        .header {
-          flex-direction: column;
-        }
-        .header img {
-          margin: 0;
-          margin-bottom: 20px;
-        }
-        .nav {
-          display: flex;
-          flex-direction: column;
-        }
-        .nav a {
-          margin: 10px 0;
-          border-bottom: 1px solid rgba(245, 245, 245, 0.2);
-        }
-        
-      }
-      .section {
-        background-color: transparent; /* Default background color */
-        /* backdrop-filter: blur(2px); */
-        background-image: linear-gradient(
-          120deg,
+    .section {
+      background-color: transparent;
+      /* Default background color */
+      /* backdrop-filter: blur(2px); */
+      background-image: linear-gradient(120deg,
           rgba(217, 217, 217, 0.4),
-          rgba(104, 141, 251, 0.1)
-        );
-        padding: 20px;
-        margin-bottom: 20px;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        scroll-margin-top: 70px;
-      }
+          rgba(104, 141, 251, 0.1));
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      scroll-margin-top: 70px;
+    }
 
-      .content {
-            flex: 1;
-            min-width: 300px;
-            padding: 10px;
-        }
+    .content {
+      flex: 1;
+      min-width: 300px;
+      padding: 10px;
+    }
 
-        .slider {
-          position: relative;
-            width: 100%;
-            max-width: 800px;
-            margin: 20px auto;
-            overflow: hidden;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        }
-        .slides {
-            display: flex;
-            transition: transform 0.7s ease;
-        }
-        .slides img {
-            width: 100%;
-            height: auto;
-        }
-        .navigate {
-            position: absolute;
-            top: 50%;
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            transform: translateY(-50%);
-        }
-        .navigate button {
-            background-color: rgba(0,0,0,0.5);
-            border: none;
-            color: #fff;
-            padding: 10px;
-            cursor: pointer;
-        }
-        .image-description {
-            text-align: center;
-            margin-top: 10px;
-            color: #444;
-        }
+    .slider {
+      position: relative;
+      width: 100%;
+      max-width: 800px;
+      margin: 20px auto;
+      overflow: hidden;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
 
+    .slides {
+      display: flex;
+      transition: transform 0.7s ease;
+    }
 
+    .slides img {
+      width: 100%;
+      height: auto;
+    }
 
-      .skills-container {
-        display: flex;
-        flex-wrap: wrap;
-      }
-      .skill-box {
-        border: 1px solid #333;
-        border-radius: 5px;
-        padding: 10px;
-        margin: 5px;
-        margin-right: 80px;
-        display: flex;
-        align-items: center;
-      }
-      .skill-box i {
-        margin-right: 10px;
-        color: #555;
-      }
+    .navigate {
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      transform: translateY(-50%);
+    }
 
-      .work-container {
-        width: 100%;
-        display: flex;
-        flex-wrap: wrap;
-      }
-      .work-item {
-        border: 1px solid #333;
-        border-radius: 5px;
-        padding: 10px;
-        margin: 5px;
-        display: flex;
-        align-items: center;
-        width: 100%;
-      }
-      .work-item i {
-        margin-right: 10px;
-        color: #555;
-      }
-      .work-item h3 {
-        margin: 0;
-      }
-      .work-item p {
-        margin: 0;
-        margin-bottom: 5px;
-      }
-      .work-item a {
-        color: white;
-        background-color: #333;
-        border: none;
-        padding: 5px;
-        border-radius: 5px;
-        margin: 5px;
-        padding-left: 15px;
-        padding-right: 15px;
-        text-decoration: none;
-        cursor: pointer;
-        width: 100%; /* Full width for consistency */
-        text-align: center;
-        font-size: 15px; /* Uniform text size */
-      }
+    .navigate button {
+      background-color: rgba(0, 0, 0, 0.5);
+      border: none;
+      color: #fff;
+      padding: 10px;
+      cursor: pointer;
+    }
 
-      .work-item a:hover {
-        background-color: #007bff;
-      }
-
-      /* Education Styles */
-      .education-container {
-        display: flex;
-        flex-wrap: wrap;
-      }
-      .education-item {
-        border: 1px solid #333;
-        border-radius: 5px;
-        padding: 10px;
-        margin: 5px;
-        display: flex;
-        align-items: center;
-        width: 100%;
-      }
-      .education-item i {
-        margin-right: 10px;
-        color: #555;
-      }
-      .education-item h3 {
-        margin: 0;
-      }
-      .education-item p {
-        margin: 0;
-      }
-      /* Projects Styles */
-      .projects-container {
-        display: flex;
-        flex-wrap: wrap;
-      }
-      .project-item {
-        border: 1px solid #333;
-        border-radius: 5px;
-        padding: 10px;
-        margin: 5px;
-        display: flex;
-        align-items: center;
-        width: 100%;
-      }
-      .project-item i {
-        margin-right: 10px;
-        color: #555;
-      }
-      .project-item h3 {
-        margin: 0;
-      }
-      .project-item p {
-        margin: 0;
-      }
-
-      .project-item a {
-        color: white;
-        background-color: #333;
-        padding: 7.5px; /* Increased padding for better visibility */
-        border: none;
-        border-radius: 5px;
-        margin: 5px;
-        text-decoration: none;
-        cursor: pointer;
-        width: 100%; /* Full width for consistency */
-        text-align: center;
-        font-size: 15px; /* Uniform text size */
-        box-sizing: border-box; /* Ensures padding and border are included in the width and height */
-      }
-
-      .details-toggle {
-        color: white;
-        background-color: #333;
-        padding: 10px; /* Increased padding for better visibility */
-        border: none;
-        border-radius: 5px;
-        margin: 5px;
-        text-decoration: none;
-        cursor: pointer;
-        width: 100%; /* Full width for consistency */
-        text-align: center;
-        font-size: 15px; /* Uniform text size */
-        box-sizing: border-box; /* Ensures padding and border are included in the width and height */
-      }
-
-      .project-item a:hover,
-      .details-toggle:hover {
-        background-color: #007bff;
-      }
-
-      .project-actions {
-        display: flex;
-        align-items: center;
-        justify-content: space-between; /* Space out the items evenly */
-        margin-top: 0;
-      }
-
-      .project-details {
-        margin-top: 10px;
-        border-top: 1px solid #333;
-        padding-top: 10px;
-      }
+    .image-description {
+      text-align: center;
+      margin-top: 10px;
+      color: #444;
+    }
 
 
-      /* Research Styles */
-      .research-container {
-        display: flex;
-        flex-wrap: wrap;
-      }
-      .research-item {
-        border: 1px solid #333;
-        border-radius: 5px;
-        padding: 10px;
-        margin: 5px;
-        display: flex;
-        align-items: center;
-        width: 100%;
-      }
-      .research-item i {
-        margin-right: 10px;
-        color: #555;
-      }
-      .research-item h3 {
-        margin: 0;
-      }
-      .research-item p {
-        margin: 0;
-      }
 
-      /* Achievements Styles */
-      .achievements-container {
-        display: flex;
-        flex-wrap: wrap;
-      }
-      .achievement-item {
-        border: 1px solid #333;
-        border-radius: 5px;
-        padding: 10px;
-        margin: 5px;
-        display: flex;
-        align-items: center;
-        width: 100%;
-      }
-      .achievement-item i {
-        margin-right: 10px;
-        color: #555;
-      }
-      .achievement-item h3 {
-        margin: 0;
-      }
-      .achievement-item p {
-        margin: 0;
-      }
+    .skills-container {
+      display: flex;
+      flex-wrap: wrap;
+    }
 
-      .community-container {
-        display: flex;
-        flex-wrap: wrap;
-      }
-      .community-item {
-        border: 1px solid #333;
-        border-radius: 5px;
-        padding: 10px;
-        margin: 5px;
-        display: flex;
-        align-items: center;
-        width: 100%;
-      }
-      .community-item i {
-        margin-right: 10px;
-        color: #555;
-      }
-      .community-item h3 {
-        margin: 0;
-      }
-      .community-item p {
-        margin: 0;
-      }
+    .skill-box {
+      border: 1px solid #333;
+      border-radius: 5px;
+      padding: 10px;
+      margin: 5px;
+      margin-right: 80px;
+      display: flex;
+      align-items: center;
+    }
 
-      /* Certifications Styles */
-      .certifications-container {
-        display: flex;
-        flex-wrap: wrap;
-      }
-      .certification-item {
-        border: 1px solid #333;
-        border-radius: 5px;
-        padding: 10px;
-        margin: 5px;
-        display: flex;
-        align-items: center;
-        width: 100%;
-      }
-      .certification-item i {
-        margin-right: 10px;
-        color: #555;
-      }
-      .certification-item h3 {
-        margin: 0;
-      }
-      .certification-item p {
-        margin: 0;
-      }
+    .skill-box i {
+      margin-right: 10px;
+      color: #555;
+    }
+
+    .work-container {
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .work-item {
+      border: 1px solid #333;
+      border-radius: 5px;
+      padding: 10px;
+      margin: 5px;
+      display: flex;
+      align-items: center;
+      width: 100%;
+    }
+
+    .work-item i {
+      margin-right: 10px;
+      color: #555;
+    }
+
+    .work-item h3 {
+      margin: 0;
+    }
+
+    .work-item p {
+      margin: 0;
+      margin-bottom: 5px;
+    }
+
+    .work-item a {
+      color: white;
+      background-color: #333;
+      border: none;
+      padding: 5px;
+      border-radius: 5px;
+      margin: 5px;
+      padding-left: 15px;
+      padding-right: 15px;
+      text-decoration: none;
+      cursor: pointer;
+      width: 100%;
+      /* Full width for consistency */
+      text-align: center;
+      font-size: 15px;
+      /* Uniform text size */
+    }
+
+    .work-item a:hover {
+      background-color: #007bff;
+    }
+
+    /* Education Styles */
+    .education-container {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .education-item {
+      border: 1px solid #333;
+      border-radius: 5px;
+      padding: 10px;
+      margin: 5px;
+      display: flex;
+      align-items: center;
+      width: 100%;
+    }
+
+    .education-item i {
+      margin-right: 10px;
+      color: #555;
+    }
+
+    .education-item h3 {
+      margin: 0;
+    }
+
+    .education-item p {
+      margin: 0;
+    }
+
+    /* Projects Styles */
+    .projects-container {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .project-item {
+      border: 1px solid #333;
+      border-radius: 5px;
+      padding: 10px;
+      margin: 5px;
+      display: flex;
+      align-items: center;
+      width: 100%;
+    }
+
+    .project-item i {
+      margin-right: 10px;
+      color: #555;
+    }
+
+    .project-item h3 {
+      margin: 0;
+    }
+
+    .project-item p {
+      margin: 0;
+    }
+
+    .project-item a {
+      color: white;
+      background-color: #333;
+      padding: 7.5px;
+      /* Increased padding for better visibility */
+      border: none;
+      border-radius: 5px;
+      margin: 5px;
+      text-decoration: none;
+      cursor: pointer;
+      width: 100%;
+      /* Full width for consistency */
+      text-align: center;
+      font-size: 15px;
+      /* Uniform text size */
+      box-sizing: border-box;
+      /* Ensures padding and border are included in the width and height */
+    }
+
+    .details-toggle {
+      color: white;
+      background-color: #333;
+      padding: 10px;
+      /* Increased padding for better visibility */
+      border: none;
+      border-radius: 5px;
+      margin: 5px;
+      text-decoration: none;
+      cursor: pointer;
+      width: 100%;
+      /* Full width for consistency */
+      text-align: center;
+      font-size: 15px;
+      /* Uniform text size */
+      box-sizing: border-box;
+      /* Ensures padding and border are included in the width and height */
+    }
+
+    .project-item a:hover,
+    .details-toggle:hover {
+      background-color: #007bff;
+    }
+
+    .project-actions {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      /* Space out the items evenly */
+      margin-top: 0;
+    }
+
+    .project-details {
+      margin-top: 10px;
+      border-top: 1px solid #333;
+      padding-top: 10px;
+    }
 
 
-      .justified {
-            text-align: justify;
-        }
+    /* Research Styles */
+    .research-container {
+      display: flex;
+      flex-wrap: wrap;
+    }
 
-      /* Particle Background */
-      #particles-js {
-        position: fixed;
-        width: 100%;
-        height: 100%;
-        top: 0;
-        left: 0;
-        z-index: -1;
-        background-color: #f9f9f9;
-      }
-    </style>
+    .research-item {
+      border: 1px solid #333;
+      border-radius: 5px;
+      padding: 10px;
+      margin: 5px;
+      display: flex;
+      align-items: center;
+      width: 100%;
+    }
 
-    <title>AR Ahad</title>
-    <link rel="icon" href="ahad.png" type="image/x-icon" />
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-  </head>
-  <body>
-    <div id="particles-js"></div>
-    <header class="header">
-      <div class="profile">
-        <img src="ARisHERE.png" alt="Profile Picture" class="profile-picture" />
-        <div class="profile-info">
-          <h2>MD. AHADUR ROHMAN AHAD</h2>
-          <p>B.Sc Engineering in CSE</p>
+    .research-item i {
+      margin-right: 10px;
+      color: #555;
+    }
+
+    .research-item h3 {
+      margin: 0;
+    }
+
+    .research-item p {
+      margin: 0;
+    }
+
+    /* Achievements Styles */
+    .achievements-container {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .achievement-item {
+      border: 1px solid #333;
+      border-radius: 5px;
+      padding: 10px;
+      margin: 5px;
+      display: flex;
+      align-items: center;
+      width: 100%;
+    }
+
+    .achievement-item i {
+      margin-right: 10px;
+      color: #555;
+    }
+
+    .achievement-item h3 {
+      margin: 0;
+    }
+
+    .achievement-item p {
+      margin: 0;
+    }
+
+    .community-container {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .community-item {
+      border: 1px solid #333;
+      border-radius: 5px;
+      padding: 10px;
+      margin: 5px;
+      display: flex;
+      align-items: center;
+      width: 100%;
+    }
+
+    .community-item i {
+      margin-right: 10px;
+      color: #555;
+    }
+
+    .community-item h3 {
+      margin: 0;
+    }
+
+    .community-item p {
+      margin: 0;
+    }
+
+    /* Certifications Styles */
+    .certifications-container {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .certification-item {
+      border: 1px solid #333;
+      border-radius: 5px;
+      padding: 10px;
+      margin: 5px;
+      display: flex;
+      align-items: center;
+      width: 100%;
+    }
+
+    .certification-item i {
+      margin-right: 10px;
+      color: #555;
+    }
+
+    .certification-item h3 {
+      margin: 0;
+    }
+
+    .certification-item p {
+      margin: 0;
+    }
+
+
+    .justified {
+      text-align: justify;
+    }
+
+    /* Particle Background */
+    #particles-js {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      background-color: #f9f9f9;
+    }
+  </style>
+
+  <title>AR Ahad</title>
+  <link rel="icon" href="ahad.png" type="image/x-icon" />
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+</head>
+
+<body>
+  <div id="particles-js"></div>
+  <header class="header">
+    <div class="profile">
+      <img src="ARisHERE.png" alt="Profile Picture" class="profile-picture" />
+      <div class="profile-info">
+        <h2>MD. AHADUR ROHMAN AHAD</h2>
+        <p>B.Sc Engineering in CSE</p>
+      </div>
+    </div>
+    <nav class="navigation">
+      <ul>
+        <li id="phone-number">
+          <a href="tel:+8801739-411518" class="contact-link">+8801739-411518</a>
+        </li>
+        <li>
+          <a href="mailto:go2arahad@gmail.com" class="contact-link">E-mail</a>
+        </li>
+        <li>
+          <a href="https://www.linkedin.com/in/arishere" target="_blank" class="social-link">LinkedIn</a>
+        </li>
+        <li>
+          <a href="https://github.com/arishere" target="_blank" class="social-link">GitHub</a>
+        </li>
+        <li>
+          <a href="Md Ahadur Rohman Ahad_CV.pdf" target="_blank" class="cv-link">Download CV</a>
+        </li>
+        <li>
+          <a href="Md Ahadur Rohman Ahad_Resume.pdf" target="_blank" class="cv-link">Download Resume</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <nav class="nav">
+    <a href="#about">About</a>
+    <a href="#work-experience">Work Experience</a>
+    <a href="#education">Education</a>
+    <a href="#projects">Projects</a>
+    <a href="#research">Research</a>
+    <a href="#achievements">Achievements</a>
+    <a href="#certifications">Certifications</a>
+    <a href="#community">Community Involvement</a>
+    <a href="#skills">Skills</a>
+  </nav>
+  <main>
+    <section id="about" class="section">
+      <h2>ABOUT</h2>
+      <div class="content">
+        <p class="justified">
+          Hello, I recently completed my Bachelor of Science in Computer Science
+          and Engineering at the Bangladesh Army University of Engineering &
+          Technology (BAUET). Currently, I am working on research in the fields
+          of Machine Learning and Bioinformatics. As part of my research, I am
+          focusing on disease detection and its prognosis. Outside of the tech
+          world, I enjoy challenging myself to develop new skills. My hobbies
+          include volunteering with multiple organizations.
+        </p>
+      </div>
+      <div class="slider">
+        <div class="slides">
+          <img src="/source/1.JPG" alt="1">
+          <img src="/source/2.jpg" alt="2">
+          <img src="/source/3.JPG" alt="3">
+          <img src="/source/4.jpg" alt="4">
+          <img src="/source/5.JPG" alt="5">
+          <img src="/source/6.JPG" alt="6">
+          <img src="/source/7.JPG" alt="7">
+          <img src="/source/8.JPG" alt="8">
+          <img src="/source/9.JPG" alt="9">
+          <img src="/source/10.JPG" alt="10">
+        </div>
+        <div class="navigate">
+          <button onclick="prevSlide()">&#10094;</button>
+          <button onclick="nextSlide()">&#10095;</button>
         </div>
       </div>
-      <nav class="navigation">
-        <ul>
-          <li id="phone-number">
-            <a href="tel:+8801739-411518" class="contact-link">+8801739-411518</a>
-          </li>
-          <li>
-            <a href="mailto:go2arahad@gmail.com" class="contact-link">E-mail</a>
-          </li>
-          <li>
-            <a
-              href="https://www.linkedin.com/in/arishere"
-              target="_blank"
-              class="social-link"
-              >LinkedIn</a
-            >
-          </li>
-          <li>
-            <a
-              href="https://github.com/arishere"
-              target="_blank"
-              class="social-link"
-              >GitHub</a
-            >
-          </li>
-          <li>
-            <a
-              href="Md Ahadur Rohman Ahad_CV.pdf"
-              target="_blank"
-              class="cv-link">Download CV</a>
-          </li>
-        </ul>
-      </nav>
-    </header>
+      <div class="image-description">
+        <p id="description">Description</p>
+      </div>
+    </section>
 
-    <nav class="nav">
-      <a href="#about">About</a>
-      <a href="#work-experience">Work Experience</a>
-      <a href="#education">Education</a>
-      <a href="#projects">Projects</a>
-      <a href="#research">Research</a>
-      <a href="#achievements">Achievements</a>
-      <a href="#certifications">Certifications</a>
-      <a href="#community">Community Involvement</a>
-      <a href="#skills">Skills</a>
-    </nav>
-    <main>
-      <section id="about" class="section">
-        <h2>ABOUT</h2>
-        <div class="content">
-            <p class="justified">
-                Hello, I recently completed my Bachelor of Science in Computer Science
-                and Engineering at the Bangladesh Army University of Engineering &
-                Technology (BAUET). Currently, I am working on research in the fields
-                of Machine Learning and Bioinformatics. As part of my research, I am
-                focusing on disease detection and its prognosis. Outside of the tech
-                world, I enjoy challenging myself to develop new skills. My hobbies
-                include volunteering with multiple organizations.
+    <section id="work-experience" class="section">
+      <h2>WORK EXPERIENCE</h2>
+      <ul class="work-container">
+        <li class="work-item">
+          <i class="fas fa-laptop-code"></i>
+          <div>
+            <h3>Intern - Software Development</h3>
+            <p>SheBa Web Technology LLC</p>
+            <p>May 2023 - August 2023</p>
+            <p>
+              <a href="https://shebawebtech.com/" target="_blank">Website</a>
             </p>
+          </div>
+        </li>
+        <li class="work-item">
+          <i class="fas fa-network-wired"></i>
+          <div>
+            <h3>Intern - Diverse Theoretical and Hands-on Activity</h3>
+            <p>
+              Bangladesh Research and Education Network (BdREN)
+            </p>
+            <p>May 2023 - June 2023</p>
+            <p>
+              <a href="https://www.bdren.net.bd/" target="_blank">Website</a>
+            </p>
+          </div>
+        </li>
+      </ul>
+    </section>
+    <section id="education" class="section">
+      <h2>EDUCATION</h2>
+      <div class="education-container">
+        <div class="education-item">
+          <i class="fa fa-graduation-cap"></i>
+          <div>
+            <h3>SSC</h3>
+            <p>
+              <strong>Institution:</strong> Masjid Mission Academy (School &
+              College), Rajshahi
+            </p>
+            <p><strong>GPA:</strong> 4.91</p>
+            <p><strong>Year:</strong> 2017</p>
+          </div>
         </div>
-        <div class="slider">
-            <div class="slides">
-                <img src="/source/1.JPG" alt="1">
-                <img src="/source/2.jpg" alt="2">
-                <img src="/source/3.JPG" alt="3">
-                <img src="/source/4.jpg" alt="4">
-                <img src="/source/5.JPG" alt="5">
-                <img src="/source/6.JPG" alt="6">
-                <img src="/source/7.JPG" alt="7">
-                <img src="/source/8.JPG" alt="8">
-                <img src="/source/9.JPG" alt="9">
-                <img src="/source/10.JPG" alt="10">
-            </div>
-            <div class="navigate">
-                <button onclick="prevSlide()">&#10094;</button>
-                <button onclick="nextSlide()">&#10095;</button>
-            </div>
+        <div class="education-item">
+          <i class="fa fa-graduation-cap"></i>
+          <div>
+            <h3>HSC</h3>
+            <p>
+              <strong>Institution:</strong> Shah Makhdum College, Rajshahi
+            </p>
+            <p><strong>GPA:</strong> 4.92</p>
+            <p><strong>Year:</strong> 2019</p>
+          </div>
         </div>
-        <div class="image-description">
-            <p id="description">Description</p>
+        <div class="education-item">
+          <i class="fa fa-graduation-cap"></i>
+          <div>
+            <h3>Bachelor of Science</h3>
+            <p><strong>Field:</strong> Computer Science and Engineering</p>
+            <p>
+              <strong>Institution:</strong> Bangladesh Army University of
+              Engineering & Technology (BAUET), Qadirabad, Natore-6431
+            </p>
+            <p><strong>Year:</strong> 2024</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <section id="projects" class="section">
+      <h2>PROJECTS</h2>
+      <div class="projects-container">
+        <div class="project-item">
+          <i class="fa fa-code"></i>
+          <div>
+            <h3>Search Engine on Data Structure - C++</h3>
+            <p><strong>Institution:</strong> Bangladesh Army University of Engineering & Technology (BAUET)</p>
+            <p><strong>Date:</strong> October 2021</p>
+            <div class="project-actions">
+              <button class="details-toggle">See Details</button>
+              <a href="https://github.com/ARisHere/Search-Player" target="_blank">GitHub Link</a>
+            </div>
+            <div class="project-details" style="display: none;">
+              <p class="justified"><strong>Details:</strong> This project is a search engine implemented using data
+                structures. It provides functionalities like adding, removing, and searching for data based on various
+                criteria.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-item">
+          <i class="fa fa-code"></i>
+          <div>
+            <h3>Contact Management System to find Blood Donor - C++</h3>
+            <p><strong>Institution:</strong> Bangladesh Army University of Engineering & Technology (BAUET)</p>
+            <p><strong>Date:</strong> March 2022</p>
+            <div class="project-actions">
+              <button class="details-toggle">See Details</button>
+              <a href="https://github.com/ARisHere/Blood-Doner-Management-System" target="_blank">GitHub Link</a>
+            </div>
+            <div class="project-details" style="display: none;">
+              <p class="justified"><strong>Details:</strong> This project is a contact management system designed to
+                help locate blood donors. It includes features like adding, removing, and searching for contacts based
+                on various criteria.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-item">
+          <i class="fa fa-code"></i>
+          <div>
+            <h3>Library Management System - Java</h3>
+            <p><strong>Institution:</strong> Bangladesh Army University of Engineering & Technology (BAUET)</p>
+            <p><strong>Date:</strong> February 2022</p>
+            <div class="project-actions">
+              <button class="details-toggle">See Details</button>
+              <a href="https://github.com/ARisHere/Library-Management-System" target="_blank">GitHub Link</a>
+            </div>
+            <div class="project-details" style="display: none;">
+              <p class="justified"><strong>Details:</strong> This project is a library management system that helps in
+                managing the books in a library. It includes features such as adding new books, removing old ones, and
+                searching for books by title or author.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-item">
+          <i class="fa fa-code"></i>
+          <div>
+            <h3>Change Maker - Java, Android Studio</h3>
+            <p><strong>Institution:</strong> Bangladesh Army University of Engineering & Technology (BAUET)</p>
+            <p><strong>Date:</strong> April 2022</p>
+            <div class="project-actions">
+              <button class="details-toggle">See Details</button>
+              <a href="https://github.com/ARisHere/Change-Maker" target="_blank">GitHub Link</a>
+            </div>
+            <div class="project-details" style="display: none;">
+              <p class="justified"><strong>Details:</strong> This project is an Android application that helps users
+                calculate the change to be returned after a transaction. It provides an easy interface to input the
+                transaction amount and payment received.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-item">
+          <i class="fa fa-code"></i>
+          <div>
+            <h3>The Modern City Originator - Java, Android Studio</h3>
+            <p><strong>Institution:</strong> Bangladesh Army University of Engineering & Technology (BAUET)</p>
+            <p><strong>Date:</strong> November 2022</p>
+            <div class="project-actions">
+              <button class="details-toggle">See Details</button>
+              <a href="https://github.com/ARisHere/The-Modern-city-Originator" target="_blank">GitHub Link</a>
+            </div>
+            <div class="project-details" style="display: none;">
+              <p class="justified"><strong>Details:</strong> This project is an Android application that simulates the
+                development of a modern city. Users can design city layouts, manage resources, and simulate city growth
+                over time.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-item">
+          <i class="fa fa-code"></i>
+          <div>
+            <h3>DocSoln - HTML, CSS, JavaScript, Django</h3>
+            <p><strong>Institution:</strong> Bangladesh Army University of Engineering & Technology (BAUET)</p>
+            <p><strong>Date:</strong> October 2022</p>
+            <div class="project-actions">
+              <button class="details-toggle">See Details</button>
+              <a href="https://github.com/ARisHere/Docsoln" target="_blank">GitHub Link</a>
+            </div>
+            <div class="project-details" style="display: none;">
+              <p class="justified"><strong>Details:</strong> This project is a web application for managing documents.
+                It includes features such as uploading, searching, and organizing documents based on different
+                categories and tags.</p>
+            </div>
+          </div>
+        </div>
+        <div class="project-item">
+          <i class="fa fa-code"></i>
+          <div>
+            <h3>ProfessionalBD - Android Studio, Node JS</h3>
+            <p><strong>Company:</strong> SheBa Web Technology LLC</p>
+            <p><strong>Date:</strong> June 2023</p>
+            <div class="project-actions">
+              <button class="details-toggle">See Details</button>
+              <a href="https://github.com/ARisHere/Professional-BD" target="_blank">GitHub Link</a>
+            </div>
+            <div class="project-details" style="display: none;">
+              <p class="justified"><strong>Details:</strong> This project is an Android application that connects
+                professionals with potential clients. Users can create profiles, showcase their skills, and find job
+                opportunities.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-item">
+          <i class="fa fa-code"></i>
+          <div>
+            <h3>SheBa IT Academy - Android Studio, Firebase</h3>
+            <p><strong>Company:</strong> SheBa Web Technology LLC</p>
+            <p><strong>Date:</strong> August 2023</p>
+            <div class="project-actions">
+              <button class="details-toggle">See Details</button>
+              <a href="https://github.com/ARisHere/SheBa-IT-Academy" target="_blank">GitHub Link</a>
+            </div>
+            <div class="project-details" style="display: none;">
+              <p class="justified"><strong>Details:</strong> This project is an Android application for an IT academy.
+                It provides course materials, schedules, and student management features for both instructors and
+                students.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-item">
+          <i class="fa fa-code"></i>
+          <div>
+            <h3>AgriStairs - Android Studio, Machine Learning</h3>
+            <p><strong>Institution:</strong> Bangladesh Army University of Engineering & Technology (BAUET)</p>
+            <p><strong>Date:</strong> October 2023</p>
+            <div class="project-actions">
+              <button class="details-toggle">See Details</button>
+              <a href="https://github.com/ARisHere/AgriStairs" target="_blank">GitHub Link</a>
+            </div>
+            <div class="project-details" style="display: none;">
+              <p class="justified"><strong>Details:</strong> This project is an Android application that uses machine
+                learning to assist farmers in identifying crop diseases. The app allows users to take pictures of crops
+                and receive diagnoses and treatment recommendations.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-item">
+          <i class="fa fa-code"></i>
+          <div>
+            <h3>DX Ball - Computer Graphics, C++ (GLUT)</h3>
+            <p><strong>Institution:</strong> Bangladesh Army University of Engineering & Technology (BAUET)</p>
+            <p><strong>Date:</strong> March 2024</p>
+            <div class="project-actions">
+              <button class="details-toggle">See Details</button>
+              <a href="https://github.com/ARisHere/DX-Ball" target="_blank">GitHub Link</a>
+            </div>
+            <div class="project-details" style="display: none;">
+              <p class="justified"><strong>Details:</strong> This project is a compiler game. This is an computer
+                graphics project which I completed to ensure my computer graphics skill and it's movement. I use c++
+                glut and igraphichs library to complete this project.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-item">
+          <i class="fa fa-code"></i>
+          <div>
+            <h3>Personal Portfolio - HTML, CSS & Java Script</h3>
+            <p><strong>Website:</strong> www.arishere.netlify.app</p>
+            <p><strong>Date:</strong> June 2024</p>
+            <div class="project-actions">
+              <button class="details-toggle">See Details</button>
+              <a href="https://github.com/ARisHere/myportfolio" target="_blank">GitHub Link</a>
+            </div>
+            <div class="project-details" style="display: none;">
+              <p class="justified"><strong>Details:</strong> This project is about my personal information and you are
+                now visiting this.</p>
+            </div>
+          </div>
         </div>
     </section>
 
-      <section id="work-experience" class="section">
-        <h2>WORK EXPERIENCE</h2>
-        <ul class="work-container">
-          <li class="work-item">
-            <i class="fas fa-laptop-code"></i>
-            <div>
-              <h3>Intern - Software Development</h3>
-              <p>SheBa Web Technology LLC</p>
-              <p>May 2023 - August 2023</p>
-              <p>
-                <a href="https://shebawebtech.com/" target="_blank">Website</a>
-              </p>
-            </div>
-          </li>
-          <li class="work-item">
-            <i class="fas fa-network-wired"></i>
-            <div>
-              <h3>Intern - Diverse Theoretical and Hands-on Activity</h3>
-              <p>
-                Bangladesh Research and Education Network (BdREN)
-              </p>
-              <p>May 2023 - June 2023</p>
-              <p>
-                <a href="https://www.bdren.net.bd/" target="_blank">Website</a>
-              </p>
-            </div>
-          </li>
-        </ul>
-      </section>
-      <section id="education" class="section">
-        <h2>EDUCATION</h2>
-        <div class="education-container">
-          <div class="education-item">
-            <i class="fa fa-graduation-cap"></i>
-            <div>
-              <h3>SSC</h3>
-              <p>
-                <strong>Institution:</strong> Masjid Mission Academy (School &
-                College), Rajshahi
-              </p>
-              <p><strong>GPA:</strong> 4.91</p>
-              <p><strong>Year:</strong> 2017</p>
-            </div>
-          </div>
-          <div class="education-item">
-            <i class="fa fa-graduation-cap"></i>
-            <div>
-              <h3>HSC</h3>
-              <p>
-                <strong>Institution:</strong> Shah Makhdum College, Rajshahi
-              </p>
-              <p><strong>GPA:</strong> 4.92</p>
-              <p><strong>Year:</strong> 2019</p>
-            </div>
-          </div>
-          <div class="education-item">
-            <i class="fa fa-graduation-cap"></i>
-            <div>
-              <h3>Bachelor of Science</h3>
-              <p><strong>Field:</strong> Computer Science and Engineering</p>
-              <p>
-                <strong>Institution:</strong> Bangladesh Army University of
-                Engineering & Technology (BAUET), Qadirabad, Natore-6431
-              </p>
-              <p><strong>Year:</strong> 2024</p>
-            </div>
+    <section id="research" class="section">
+      <h2>RESEARCH</h2>
+      <div class="research-container">
+        <div class="research-item">
+          <i class="fa fa-flask"></i>
+          <div>
+            <h3>
+              Crop disease detection using Convolution Neural Network -
+              Machine Learning
+            </h3>
+            <p>
+              <strong>Institution:</strong> Bangladesh Army University of
+              Engineering & Technology (BAUET)
+            </p>
+            <p><strong>Date:</strong> April 2023</p>
           </div>
         </div>
-      </section>
-
-
-      <section id="projects" class="section">
-        <h2>PROJECTS</h2>
-        <div class="projects-container">
-          <div class="project-item">
-            <i class="fa fa-code"></i>
-            <div>
-              <h3>Search Engine on Data Structure - C++</h3>
-              <p><strong>Institution:</strong> Bangladesh Army University of Engineering & Technology (BAUET)</p>
-              <p><strong>Date:</strong>  October 2021</p>
-              <div class="project-actions">
-                <button class="details-toggle">See Details</button>
-                <a href="https://github.com/ARisHere/Search-Player" target="_blank">GitHub Link</a>
-              </div>
-              <div class="project-details" style="display: none;">
-                <p class="justified"><strong>Details:</strong> This project is a search engine implemented using data structures. It provides functionalities like adding, removing, and searching for data based on various criteria.</p>
-              </div>
-            </div>
-          </div>
-      
-          <div class="project-item">
-            <i class="fa fa-code"></i>
-            <div>
-              <h3>Contact Management System to find Blood Donor - C++</h3>
-              <p><strong>Institution:</strong> Bangladesh Army University of Engineering & Technology (BAUET)</p>
-              <p><strong>Date:</strong>  March 2022</p>
-              <div class="project-actions">
-                <button class="details-toggle">See Details</button>
-                <a href="https://github.com/ARisHere/Blood-Doner-Management-System" target="_blank">GitHub Link</a>
-              </div>
-              <div class="project-details" style="display: none;">
-                <p class="justified"><strong>Details:</strong> This project is a contact management system designed to help locate blood donors. It includes features like adding, removing, and searching for contacts based on various criteria.</p>
-              </div>
-            </div>
-          </div>
-      
-          <div class="project-item">
-            <i class="fa fa-code"></i>
-            <div>
-              <h3>Library Management System - Java</h3>
-              <p><strong>Institution:</strong> Bangladesh Army University of Engineering & Technology (BAUET)</p>
-              <p><strong>Date:</strong>  February 2022</p>
-              <div class="project-actions">
-                <button class="details-toggle">See Details</button>
-                <a href="https://github.com/ARisHere/Library-Management-System" target="_blank">GitHub Link</a>
-              </div>
-              <div class="project-details" style="display: none;">
-                <p class="justified"><strong>Details:</strong> This project is a library management system that helps in managing the books in a library. It includes features such as adding new books, removing old ones, and searching for books by title or author.</p>
-              </div>
-            </div>
-          </div>
-      
-          <div class="project-item">
-            <i class="fa fa-code"></i>
-            <div>
-              <h3>Change Maker - Java, Android Studio</h3>
-              <p><strong>Institution:</strong> Bangladesh Army University of Engineering & Technology (BAUET)</p>
-              <p><strong>Date:</strong> April 2022</p>
-              <div class="project-actions">
-                <button class="details-toggle">See Details</button>
-                <a href="https://github.com/ARisHere/Change-Maker" target="_blank">GitHub Link</a>
-              </div>
-              <div class="project-details" style="display: none;">
-                <p class="justified"><strong>Details:</strong> This project is an Android application that helps users calculate the change to be returned after a transaction. It provides an easy interface to input the transaction amount and payment received.</p>
-              </div>
-            </div>
-          </div>
-      
-          <div class="project-item">
-            <i class="fa fa-code"></i>
-            <div>
-              <h3>The Modern City Originator - Java, Android Studio</h3>
-              <p><strong>Institution:</strong> Bangladesh Army University of Engineering & Technology (BAUET)</p>
-              <p><strong>Date:</strong> November 2022</p>
-              <div class="project-actions">
-                <button class="details-toggle">See Details</button>
-                <a href="https://github.com/ARisHere/The-Modern-city-Originator" target="_blank">GitHub Link</a>
-              </div>
-              <div class="project-details" style="display: none;">
-                <p class="justified"><strong>Details:</strong> This project is an Android application that simulates the development of a modern city. Users can design city layouts, manage resources, and simulate city growth over time.</p>
-              </div>
-            </div>
-          </div>
-      
-          <div class="project-item">
-            <i class="fa fa-code"></i>
-            <div>
-              <h3>DocSoln - HTML, CSS, JavaScript, Django</h3>
-              <p><strong>Institution:</strong> Bangladesh Army University of Engineering & Technology (BAUET)</p>
-              <p><strong>Date:</strong>  October 2022</p>
-              <div class="project-actions">
-                <button class="details-toggle">See Details</button>
-                <a href="https://github.com/ARisHere/Docsoln" target="_blank">GitHub Link</a>
-              </div>
-              <div class="project-details" style="display: none;">
-                <p class="justified"><strong>Details:</strong> This project is a web application for managing documents. It includes features such as uploading, searching, and organizing documents based on different categories and tags.</p>
-              </div>
-            </div>
-          </div>
-          <div class="project-item">
-            <i class="fa fa-code"></i>
-            <div>
-              <h3>ProfessionalBD - Android Studio, Node JS</h3>
-              <p><strong>Company:</strong> SheBa Web Technology LLC</p>
-              <p><strong>Date:</strong> June 2023</p>
-              <div class="project-actions">
-                <button class="details-toggle">See Details</button>
-                <a href="https://github.com/ARisHere/Professional-BD" target="_blank">GitHub Link</a>
-              </div>
-              <div class="project-details" style="display: none;">
-                <p class="justified"><strong>Details:</strong> This project is an Android application that connects professionals with potential clients. Users can create profiles, showcase their skills, and find job opportunities.</p>
-              </div>
-            </div>
-          </div>
-      
-          <div class="project-item">
-            <i class="fa fa-code"></i>
-            <div>
-              <h3>SheBa IT Academy - Android Studio, Firebase</h3>
-              <p><strong>Company:</strong> SheBa Web Technology LLC</p>
-              <p><strong>Date:</strong> August 2023</p>
-              <div class="project-actions">
-                <button class="details-toggle">See Details</button>
-                <a href="https://github.com/ARisHere/SheBa-IT-Academy" target="_blank">GitHub Link</a>
-              </div>
-              <div class="project-details" style="display: none;">
-                <p class="justified"><strong>Details:</strong> This project is an Android application for an IT academy. It provides course materials, schedules, and student management features for both instructors and students.</p>
-              </div>
-            </div>
-          </div>
-      
-          <div class="project-item">
-            <i class="fa fa-code"></i>
-            <div>
-              <h3>AgriStairs - Android Studio, Machine Learning</h3>
-              <p><strong>Institution:</strong> Bangladesh Army University of Engineering & Technology (BAUET)</p>
-              <p><strong>Date:</strong> October 2023</p>
-              <div class="project-actions">
-                <button class="details-toggle">See Details</button>
-                <a href="https://github.com/ARisHere/AgriStairs" target="_blank">GitHub Link</a>
-              </div>
-              <div class="project-details" style="display: none;">
-                <p class="justified"><strong>Details:</strong> This project is an Android application that uses machine learning to assist farmers in identifying crop diseases. The app allows users to take pictures of crops and receive diagnoses and treatment recommendations.</p>
-              </div>
-            </div>
-          </div>
-      
-          <div class="project-item">
-            <i class="fa fa-code"></i>
-            <div>
-              <h3>DX Ball - Computer Graphics, C++ (GLUT)</h3>
-              <p><strong>Institution:</strong> Bangladesh Army University of Engineering & Technology (BAUET)</p>
-              <p><strong>Date:</strong>  March 2024</p>
-              <div class="project-actions">
-                <button class="details-toggle">See Details</button>
-                <a href="https://github.com/ARisHere/DX-Ball" target="_blank">GitHub Link</a>
-              </div>
-              <div class="project-details" style="display: none;">
-                <p class="justified"><strong>Details:</strong> This project is a compiler game. This is an computer graphics project which I completed to ensure my computer graphics skill and it's movement. I use c++ glut and igraphichs library to complete this project.</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="project-item">
-            <i class="fa fa-code"></i>
-            <div>
-              <h3>Personal Portfolio - HTML, CSS & Java Script</h3>
-              <p><strong>Website:</strong> www.arishere.netlify.app</p>
-              <p><strong>Date:</strong> June 2024</p>
-              <div class="project-actions">
-                <button class="details-toggle">See Details</button>
-                <a href="https://github.com/ARisHere/myportfolio" target="_blank">GitHub Link</a>
-              </div>
-              <div class="project-details" style="display: none;">
-                <p class="justified"><strong>Details:</strong> This project is about my personal information and you are now visiting this.</p>
-              </div>
-            </div>
-          </div>
-      </section>
-
-      <section id="research" class="section">
-        <h2>RESEARCH</h2>
-        <div class="research-container">
-          <div class="research-item">
-            <i class="fa fa-flask"></i>
-            <div>
-              <h3>
-                Crop disease detection using Convolution Neural Network -
-                Machine Learning
-              </h3>
-              <p>
-                <strong>Institution:</strong> Bangladesh Army University of
-                Engineering & Technology (BAUET)
-              </p>
-              <p><strong>Date:</strong>  April 2023</p>
-            </div>
-          </div>
-          <div class="research-item">
-            <i class="fa fa-flask"></i>
-            <div>
-              <h3>
-                A Review Paper on MRI-based Brain Tumor Detection - Machine
-                Learning
-              </h3>
-              <p>
-                <strong>Institution:</strong> Bangladesh Army University of
-                Engineering & Technology (BAUET)
-              </p>
-              <p><strong>Date:</strong>  October 2023</p>
-            </div>
-          </div>
-          <div class="research-item">
-            <i class="fa fa-flask"></i>
-            <div>
-              <h3>
-                Prognosis and Therapeutic Insights of Thalassemia -
-                Bioinformatics
-              </h3>
-              <p>
-                <strong>Institution:</strong> Bangladesh Army University of
-                Engineering & Technology (BAUET)
-              </p>
-              <p><strong>Date:</strong>  May2024</p>
-            </div>
+        <div class="research-item">
+          <i class="fa fa-flask"></i>
+          <div>
+            <h3>
+              A Review Paper on MRI-based Brain Tumor Detection - Machine
+              Learning
+            </h3>
+            <p>
+              <strong>Institution:</strong> Bangladesh Army University of
+              Engineering & Technology (BAUET)
+            </p>
+            <p><strong>Date:</strong> October 2023</p>
           </div>
         </div>
-      </section>
-
-      <section id="achievements" class="section">
-        <h2>ACHIEVEMENTS</h2>
-        <div class="achievements-container">
-          <div class="achievement-item">
-            <i class="fa fa-trophy"></i>
-            <div>
-              <h3>Champion | Programming Contest</h3>
-              <p><strong>Event:</strong> Mind Storm 4.0</p>
-              <p>
-                <strong>Institution:</strong> Bangladesh Army University of
-                Engineering & Technology (BAUET)
-              </p>
-            </div>
-          </div>
-          <div class="achievement-item">
-            <i class="fa fa-trophy"></i>
-            <div>
-              <h3>Champion | Business Plan Presentation</h3>
-              <p><strong>Event:</strong> BAUET Business Fest 2.0</p>
-              <p>
-                <strong>Institution:</strong> Bangladesh Army University of
-                Engineering & Technology (BAUET)
-              </p>
-            </div>
-          </div>
-          <div class="achievement-item">
-            <i class="fa fa-trophy"></i>
-            <div>
-              <h3>2nd Runners Up | Software Development</h3>
-              <p><strong>Event:</strong> Mind Storm 4.0</p>
-              <p>
-                <strong>Institution:</strong> Bangladesh Army University of
-                Engineering & Technology (BAUET)
-              </p>
-            </div>
-          </div>
-          <div class="achievement-item">
-            <i class="fa fa-trophy"></i>
-            <div>
-              <h3>2nd Runners Up | Software Development</h3>
-              <p><strong>Event:</strong> Mind Storm 5.0</p>
-              <p>
-                <strong>Institution:</strong> Bangladesh Army University of
-                Engineering & Technology (BAUET)
-              </p>
-            </div>
+        <div class="research-item">
+          <i class="fa fa-flask"></i>
+          <div>
+            <h3>
+              Prognosis and Therapeutic Insights of Thalassemia -
+              Bioinformatics
+            </h3>
+            <p>
+              <strong>Institution:</strong> Bangladesh Army University of
+              Engineering & Technology (BAUET)
+            </p>
+            <p><strong>Date:</strong> May2024</p>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section id="certifications" class="section">
-        <h2>TRAINING & WORKSHOP</h2>
-        <div class="certifications-container">
-          <div class="certification-item">
-            <i class="fa fa-certificate"></i>
-            <div>
-              <h3>Red Cross/Crescent Basic and First Aid Training</h3>
-              <p>
-                <strong>Organization:</strong> Bangladesh Red Crescent Society
-                (BDRCS)
-              </p>
-              <p><strong>Location:</strong> Rajshahi City Unit</p>
-              <p><strong>Years:</strong> 2016 & 2018</p>
-            </div>
-          </div>
-          <div class="certification-item">
-            <i class="fa fa-certificate"></i>
-            <div>
-              <h3>14th Red Crescent Youth Camp</h3>
-              <p>
-                <strong>Organization:</strong> Bangladesh Red Crescent Society
-              </p>
-              <p>
-                <strong>Location:</strong> National Scout Training Centre,
-                Mouchak, Gazipur.
-              </p>
-              <p><strong>Year:</strong> 2017</p>
-            </div>
-          </div>
-          <div class="certification-item">
-            <i class="fa fa-certificate"></i>
-            <div>
-              <h3>Broadcast Journalism</h3>
-              <p>
-                <strong>Organized by:</strong> BAUETPhotography and Media Club (BPMC)
-              </p>
-              <p><strong>Date:</strong> April 2021</p>
-            </div>
-          </div>
-          <div class="certification-item">
-            <i class="fa fa-certificate"></i>
-            <div>
-              <h3>Introduction to IoT</h3>
-              <p>
-                <strong>Provider:</strong> Cisco Networking Academy & GP Academy
-              </p>
-              <p><strong>Date:</strong> June 2022</p>
-            </div>
-          </div>
-          <div class="certification-item">
-            <i class="fa fa-certificate"></i>
-            <div>
-              <h3>Introduction to Cybersecurity</h3>
-              <p>
-                <strong>Provider:</strong> Cisco Networking Academy & GP Academy
-              </p>
-              <p><strong>Date:</strong> June 2022</p>
-            </div>
-          </div>
-          <div class="certification-item">
-            <i class="fa fa-certificate"></i>
-            <div>
-              <h3>Programming Essentials in Python</h3>
-              <p>
-                <strong>Provider:</strong> Cisco Networking Academy & GP Academy
-              </p>
-              <p><strong>Date:</strong> July 2022</p>
-            </div>
-          </div>
-          <div class="certification-item">
-            <i class="fa fa-certificate"></i>
-            <div>
-              <h3>Battalion Camping</h3>
-              <p><strong>Unit:</strong> 35 BNCC Battalion | BAUET Platoon</p>
-              <p><strong>Date:</strong> December 2022</p>
-            </div>
-          </div>
-          <div class="certification-item">
-            <i class="fa fa-certificate"></i>
-            <div>
-              <h3>Youth Development</h3>
-              <p>
-                <strong>Organized by:</strong> Shah Makhdum College Red Crescent Youth, Rajshahi
-              </p>
-              <p><strong>Date:</strong> September 2022</p>
-            </div>
-          </div>
-          <div class="certification-item">
-            <i class="fa fa-certificate"></i>
-            <div>
-              <h3>Satellite Technology in Bangladesh</h3>
-              <p>
-                <strong>Organized by:</strong> BAUET ICT Club
-              </p>
-              <p><strong>Date:</strong> October 2023</p>
-            </div>
-          </div>
-          <div class="certification-item">
-            <i class="fa fa-certificate"></i>
-            <div>
-              <h3>Automation and Robotics</h3>
-              <p>
-                <strong>Organized by:</strong> BAUET Automation & Robotics Club | IEEE BAUET
-              </p>
-              <p><strong>Date:</strong> January 2023</p>
-            </div>
-          </div>
-          <div class="certification-item">
-            <i class="fa fa-certificate"></i>
-            <div>
-              <h3>Collapsed Structure Seach & Rescue, Fire Fighting and First Aid Course</h3>
-              <p>
-                <strong>Provider:</strong> Fire Service and Civil Defence, Rajshahi
-              </p>
-              <p><strong>Date:</strong> Feb 2023</p>
-            </div>
-          </div>
-          <div class="certification-item">
-            <i class="fa fa-certificate"></i>
-            <div>
-              <h3>Virtual Workshop on Bioinformatics</h3>
-              <p>
-                <strong>Organized by:</strong> BioChemiX Club, Rajshahi
-                University
-              </p>
-              <p><strong>Date:</strong> April 2024</p>
-            </div>
-          </div>
-          <div class="certification-item">
-            <i class="fa fa-certificate"></i>
-            <div>
-              <h3>
-                Empowering Lives, Embracing and Accessible Thalassemia Treatment
-                for All
-              </h3>
-              <p><strong>Organized by:</strong> Rotary Club, Rajshahi</p>
-              <p><strong>Date:</strong> May 2024</p>
-            </div>
+    <section id="achievements" class="section">
+      <h2>ACHIEVEMENTS</h2>
+      <div class="achievements-container">
+        <div class="achievement-item">
+          <i class="fa fa-trophy"></i>
+          <div>
+            <h3>Champion | Programming Contest</h3>
+            <p><strong>Event:</strong> Mind Storm 4.0</p>
+            <p>
+              <strong>Institution:</strong> Bangladesh Army University of
+              Engineering & Technology (BAUET)
+            </p>
           </div>
         </div>
-      </section>
+        <div class="achievement-item">
+          <i class="fa fa-trophy"></i>
+          <div>
+            <h3>Champion | Business Plan Presentation</h3>
+            <p><strong>Event:</strong> BAUET Business Fest 2.0</p>
+            <p>
+              <strong>Institution:</strong> Bangladesh Army University of
+              Engineering & Technology (BAUET)
+            </p>
+          </div>
+        </div>
+        <div class="achievement-item">
+          <i class="fa fa-trophy"></i>
+          <div>
+            <h3>2nd Runners Up | Software Development</h3>
+            <p><strong>Event:</strong> Mind Storm 4.0</p>
+            <p>
+              <strong>Institution:</strong> Bangladesh Army University of
+              Engineering & Technology (BAUET)
+            </p>
+          </div>
+        </div>
+        <div class="achievement-item">
+          <i class="fa fa-trophy"></i>
+          <div>
+            <h3>2nd Runners Up | Software Development</h3>
+            <p><strong>Event:</strong> Mind Storm 5.0</p>
+            <p>
+              <strong>Institution:</strong> Bangladesh Army University of
+              Engineering & Technology (BAUET)
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-      <section id="community" class="section">
-        <h2>COMMUNITY INVOLVEMENT</h2>
-        <ul class="community-container">
-          <li class="community-item">
-            <i class="fas fa-hand-holding-heart"></i>
-            <div>
-              <h3>Red Crescent Youth</h3>
-              <p><strong>Organization:</strong> Bangladesh Red Crescent Society, Rajshahi City Unit    
-              </p>
-              <p><strong>Date: </strong>October 2015 - August 2018</p>
-           </div>
-          </li>
-          <li class="community-item">
-            <i class="fas fa-trophy"></i>
-            <div>
-              <h3>District Leader</h3>
-              <p><strong>Organization: </strong>ICT Olympiad Bangladesh, Rajshahi</p>
-              <p><strong>Date: </strong>May 2022 - Feb 2023</p>
-            </div>
-          </li>
-          <li class="community-item">
-            <i class="fas fa-lightbulb"></i>
-          </li>
-          <li class="community-item">
-            <i class="fas fa-fire-extinguisher"></i>
-            <div>
-              <h3>Fire and Rescue Volunteer</h3>
-              <p><strong>Organization: </strong>Fire Service and Civil Defence, Rajshahi
-              </p>
-              <p><strong>Date: </strong>April 2016 - Present</p>
-            </div>
-          </li>
-          <li class="community-item">
-            <i class="fas fa-user-shield"></i>
-            <div>
-              <h3>Cadet</h3>
-              <p><strong>Organization: </strong>Bangladesh National Cadet Core, Mohasthan Regiment (BAUET Platoon)</p>
-              <p><strong>Date: </strong>November 2020 - Present</p>
-            </div>
-          </li>
-          <li class="community-item">
-            <i class="fas fa-user-tie"></i>
-            <div>
-              <h3>HR Secretary</h3>
-              <p><strong>Organization: </strong>BAUET Computer Society, Bangladesh Army University of Engineering & Technology (BAUET)
-              </p>
-              <p><strong>Date: </strong>June 2023 - Present</p>
-            </div>
-          </li>
-          <li class="community-item">
-            <i class="fas fa-users-cog"></i>
-            <div>
-              <h3>Organizing Secretary</h3>
-              <p><strong>Organization: </strong>BAUET Business Club, Bangladesh Army University of Engineering & Technology (BAUET)
-              </p>
-              <p><strong>Date: </strong>December 2023 - Present</p>
-            </div>
-          </li>
-        </ul>
-      </section>
-      <section id="skills" class="section">
-        <h2>SKILLS</h2>
-        <ul class="skills-container">
-          <li>
-            <h3>Languages:</h3>
-            <div class="skill-box">
-              <i class="fas fa-language"></i>Bengali (Native)
-            </div>
-            <div class="skill-box">
-              <i class="fas fa-language"></i>English (B1)
-            </div>
-          </li>
-          <li>
-            <h3>Programming:</h3>
-            <div class="skill-box"><i class="fab fa-html5"></i>HTML</div>
-            <div class="skill-box"><i class="fab fa-css3-alt"></i>CSS</div>
-            <div class="skill-box"><i class="fas fa-code"></i>C</div>
-            <div class="skill-box"><i class="fas fa-code"></i>C++</div>
-            <div class="skill-box"><i class="fab fa-java"></i>JAVA</div>
-            <div class="skill-box"><i class="fab fa-python"></i>Python</div>
-            <div class="skill-box"><i class="fas fa-database"></i>MySQL</div>
-          </li>
-          <li>
-            <h3>IDE:</h3>
-            <div class="skill-box">
-              <i class="fab fa-android"></i>Android Studio
-            </div>
-            <div class="skill-box">
-              <i class="fas fa-code"></i>Visual Studio Code
-            </div>
-            <div class="skill-box"><i class="fab fa-python"></i>Anaconda</div>
-            <div class="skill-box">
-              <i class="fas fa-flask"></i>Google Colab
-            </div>
-          </li>
-          <li>
-            <h3>Document Creation:</h3>
-            <div class="skill-box">
-              <i class="fas fa-file-word"></i>Microsoft Office
-            </div>
-            <div class="skill-box"><i class="fas fa-file-alt"></i>LaTeX</div>
-          </li>
-          <li>
-            <h3>Others:</h3>
-            <div class="skill-box">
-              <i class="fas fa-calendar-alt"></i>Event Management
-            </div>
-            <div class="skill-box">
-              <i class="fas fa-users"></i>Team Management
-            </div>
-          </li>
-        </ul>
-      </section>
-    </main>
-    <footer>
-      <p>© 2024 Md. Ahadur Rohman Ahad. All rights reserved.</p>
-      <ul class="social-media">
-        <li>
-          <a href="https://www.linkedin.com/in/arishere" target="_blank"
-            ><i class="fab fa-linkedin"></i
-          ></a>
+    <section id="certifications" class="section">
+      <h2>TRAINING & WORKSHOP</h2>
+      <div class="certifications-container">
+        <div class="certification-item">
+          <i class="fa fa-certificate"></i>
+          <div>
+            <h3>Red Cross/Crescent Basic and First Aid Training</h3>
+            <p>
+              <strong>Organization:</strong> Bangladesh Red Crescent Society
+              (BDRCS)
+            </p>
+            <p><strong>Location:</strong> Rajshahi City Unit</p>
+            <p><strong>Years:</strong> 2016 & 2018</p>
+          </div>
+        </div>
+        <div class="certification-item">
+          <i class="fa fa-certificate"></i>
+          <div>
+            <h3>14th Red Crescent Youth Camp</h3>
+            <p>
+              <strong>Organization:</strong> Bangladesh Red Crescent Society
+            </p>
+            <p>
+              <strong>Location:</strong> National Scout Training Centre,
+              Mouchak, Gazipur.
+            </p>
+            <p><strong>Year:</strong> 2017</p>
+          </div>
+        </div>
+        <div class="certification-item">
+          <i class="fa fa-certificate"></i>
+          <div>
+            <h3>Broadcast Journalism</h3>
+            <p>
+              <strong>Organized by:</strong> BAUETPhotography and Media Club (BPMC)
+            </p>
+            <p><strong>Date:</strong> April 2021</p>
+          </div>
+        </div>
+        <div class="certification-item">
+          <i class="fa fa-certificate"></i>
+          <div>
+            <h3>Introduction to IoT</h3>
+            <p>
+              <strong>Provider:</strong> Cisco Networking Academy & GP Academy
+            </p>
+            <p><strong>Date:</strong> June 2022</p>
+          </div>
+        </div>
+        <div class="certification-item">
+          <i class="fa fa-certificate"></i>
+          <div>
+            <h3>Introduction to Cybersecurity</h3>
+            <p>
+              <strong>Provider:</strong> Cisco Networking Academy & GP Academy
+            </p>
+            <p><strong>Date:</strong> June 2022</p>
+          </div>
+        </div>
+        <div class="certification-item">
+          <i class="fa fa-certificate"></i>
+          <div>
+            <h3>Programming Essentials in Python</h3>
+            <p>
+              <strong>Provider:</strong> Cisco Networking Academy & GP Academy
+            </p>
+            <p><strong>Date:</strong> July 2022</p>
+          </div>
+        </div>
+        <div class="certification-item">
+          <i class="fa fa-certificate"></i>
+          <div>
+            <h3>Battalion Camping</h3>
+            <p><strong>Unit:</strong> 35 BNCC Battalion | BAUET Platoon</p>
+            <p><strong>Date:</strong> December 2022</p>
+          </div>
+        </div>
+        <div class="certification-item">
+          <i class="fa fa-certificate"></i>
+          <div>
+            <h3>Youth Development</h3>
+            <p>
+              <strong>Organized by:</strong> Shah Makhdum College Red Crescent Youth, Rajshahi
+            </p>
+            <p><strong>Date:</strong> September 2022</p>
+          </div>
+        </div>
+        <div class="certification-item">
+          <i class="fa fa-certificate"></i>
+          <div>
+            <h3>Satellite Technology in Bangladesh</h3>
+            <p>
+              <strong>Organized by:</strong> BAUET ICT Club
+            </p>
+            <p><strong>Date:</strong> October 2023</p>
+          </div>
+        </div>
+        <div class="certification-item">
+          <i class="fa fa-certificate"></i>
+          <div>
+            <h3>Automation and Robotics</h3>
+            <p>
+              <strong>Organized by:</strong> BAUET Automation & Robotics Club | IEEE BAUET
+            </p>
+            <p><strong>Date:</strong> January 2023</p>
+          </div>
+        </div>
+        <div class="certification-item">
+          <i class="fa fa-certificate"></i>
+          <div>
+            <h3>Collapsed Structure Seach & Rescue, Fire Fighting and First Aid Course</h3>
+            <p>
+              <strong>Provider:</strong> Fire Service and Civil Defence, Rajshahi
+            </p>
+            <p><strong>Date:</strong> Feb 2023</p>
+          </div>
+        </div>
+        <div class="certification-item">
+          <i class="fa fa-certificate"></i>
+          <div>
+            <h3>Virtual Workshop on Bioinformatics</h3>
+            <p>
+              <strong>Organized by:</strong> BioChemiX Club, Rajshahi
+              University
+            </p>
+            <p><strong>Date:</strong> April 2024</p>
+          </div>
+        </div>
+        <div class="certification-item">
+          <i class="fa fa-certificate"></i>
+          <div>
+            <h3>
+              Empowering Lives, Embracing and Accessible Thalassemia Treatment
+              for All
+            </h3>
+            <p><strong>Organized by:</strong> Rotary Club, Rajshahi</p>
+            <p><strong>Date:</strong> May 2024</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="community" class="section">
+      <h2>COMMUNITY INVOLVEMENT</h2>
+      <ul class="community-container">
+        <li class="community-item">
+          <i class="fas fa-hand-holding-heart"></i>
+          <div>
+            <h3>Red Crescent Youth</h3>
+            <p><strong>Organization:</strong> Bangladesh Red Crescent Society, Rajshahi City Unit
+            </p>
+            <p><strong>Date: </strong>October 2015 - August 2018</p>
+          </div>
         </li>
-        <li>
-          <a href="https://github.com/arishere" target="_blank"
-            ><i class="fab fa-github"></i
-          ></a>
+        <li class="community-item">
+          <i class="fas fa-trophy"></i>
+          <div>
+            <h3>District Leader</h3>
+            <p><strong>Organization: </strong>ICT Olympiad Bangladesh, Rajshahi</p>
+            <p><strong>Date: </strong>May 2022 - Feb 2023</p>
+          </div>
         </li>
-        <li>
-          <a href="mailto:go2arahad@gmail.com"
-            ><i class="fas fa-envelope"></i
-          ></a>
+        <li class="community-item">
+          <i class="fas fa-lightbulb"></i>
+        </li>
+        <li class="community-item">
+          <i class="fas fa-fire-extinguisher"></i>
+          <div>
+            <h3>Fire and Rescue Volunteer</h3>
+            <p><strong>Organization: </strong>Fire Service and Civil Defence, Rajshahi
+            </p>
+            <p><strong>Date: </strong>April 2016 - Present</p>
+          </div>
+        </li>
+        <li class="community-item">
+          <i class="fas fa-user-shield"></i>
+          <div>
+            <h3>Cadet</h3>
+            <p><strong>Organization: </strong>Bangladesh National Cadet Core, Mohasthan Regiment (BAUET Platoon)</p>
+            <p><strong>Date: </strong>November 2020 - Present</p>
+          </div>
+        </li>
+        <li class="community-item">
+          <i class="fas fa-user-tie"></i>
+          <div>
+            <h3>HR Secretary</h3>
+            <p><strong>Organization: </strong>BAUET Computer Society, Bangladesh Army University of Engineering &
+              Technology (BAUET)
+            </p>
+            <p><strong>Date: </strong>June 2023 - Present</p>
+          </div>
+        </li>
+        <li class="community-item">
+          <i class="fas fa-users-cog"></i>
+          <div>
+            <h3>Organizing Secretary</h3>
+            <p><strong>Organization: </strong>BAUET Business Club, Bangladesh Army University of Engineering &
+              Technology (BAUET)
+            </p>
+            <p><strong>Date: </strong>December 2023 - Present</p>
+          </div>
         </li>
       </ul>
-    </footer>
+    </section>
+    <section id="skills" class="section">
+      <h2>SKILLS</h2>
+      <ul class="skills-container">
+        <li>
+          <h3>Languages:</h3>
+          <div class="skill-box">
+            <i class="fas fa-language"></i>Bengali (Native)
+          </div>
+          <div class="skill-box">
+            <i class="fas fa-language"></i>English (B1)
+          </div>
+        </li>
+        <li>
+          <h3>Programming:</h3>
+          <div class="skill-box"><i class="fab fa-html5"></i>HTML</div>
+          <div class="skill-box"><i class="fab fa-css3-alt"></i>CSS</div>
+          <div class="skill-box"><i class="fas fa-code"></i>C</div>
+          <div class="skill-box"><i class="fas fa-code"></i>C++</div>
+          <div class="skill-box"><i class="fab fa-java"></i>JAVA</div>
+          <div class="skill-box"><i class="fab fa-python"></i>Python</div>
+          <div class="skill-box"><i class="fas fa-database"></i>MySQL</div>
+        </li>
+        <li>
+          <h3>IDE:</h3>
+          <div class="skill-box">
+            <i class="fab fa-android"></i>Android Studio
+          </div>
+          <div class="skill-box">
+            <i class="fas fa-code"></i>Visual Studio Code
+          </div>
+          <div class="skill-box"><i class="fab fa-python"></i>Anaconda</div>
+          <div class="skill-box">
+            <i class="fas fa-flask"></i>Google Colab
+          </div>
+        </li>
+        <li>
+          <h3>Document Creation:</h3>
+          <div class="skill-box">
+            <i class="fas fa-file-word"></i>Microsoft Office
+          </div>
+          <div class="skill-box"><i class="fas fa-file-alt"></i>LaTeX</div>
+        </li>
+        <li>
+          <h3>Others:</h3>
+          <div class="skill-box">
+            <i class="fas fa-calendar-alt"></i>Event Management
+          </div>
+          <div class="skill-box">
+            <i class="fas fa-users"></i>Team Management
+          </div>
+        </li>
+      </ul>
+    </section>
+  </main>
+  <footer>
+    <p>© 2024 Md. Ahadur Rohman Ahad. All rights reserved.</p>
+    <ul class="social-media">
+      <li>
+        <a href="https://www.linkedin.com/in/arishere" target="_blank"><i class="fab fa-linkedin"></i></a>
+      </li>
+      <li>
+        <a href="https://github.com/arishere" target="_blank"><i class="fab fa-github"></i></a>
+      </li>
+      <li>
+        <a href="mailto:go2arahad@gmail.com"><i class="fas fa-envelope"></i></a>
+      </li>
+    </ul>
+  </footer>
 
-    <!-- Modals -->
-    <div id="project1-modal" class="modal">
-      <div class="modal-content">
-        <span class="close">&times;</span>
-        <h2>Project 1: Student Management System C</h2>
-        <p>Details about Student Management System C...</p>
-      </div>
+  <!-- Modals -->
+  <div id="project1-modal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Project 1: Student Management System C</h2>
+      <p>Details about Student Management System C...</p>
     </div>
-    <div id="project2-modal" class="modal">
-      <div class="modal-content">
-        <span class="close">&times;</span>
-        <h2>Project 2: Search Engine on Data Structure - C++</h2>
-        <p>Details about Search Engine on Data Structure - C++...</p>
-      </div>
+  </div>
+  <div id="project2-modal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Project 2: Search Engine on Data Structure - C++</h2>
+      <p>Details about Search Engine on Data Structure - C++...</p>
     </div>
+  </div>
 
-    <script>
-      // Smooth Scrolling
-      document.querySelectorAll(".nav a").forEach((anchor) => {
-        anchor.addEventListener("click", function (e) {
-          e.preventDefault();
-          document.querySelector(this.getAttribute("href")).scrollIntoView({
-            behavior: "smooth",
-          });
+  <script>
+    // Smooth Scrolling
+    document.querySelectorAll(".nav a").forEach((anchor) => {
+      anchor.addEventListener("click", function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute("href")).scrollIntoView({
+          behavior: "smooth",
         });
-      });
-
-      // Modals
-      const modals = document.querySelectorAll(".modal");
-      const projectLinks = document.querySelectorAll(".project-link");
-      const closeButtons = document.querySelectorAll(".close");
-
-      projectLinks.forEach((link) => {
-        link.addEventListener("click", (event) => {
-          event.preventDefault();
-          document.getElementById(
-            link.getAttribute("data-modal")
-          ).style.display = "block";
-        });
-      });
-
-      closeButtons.forEach((button) => {
-        button.addEventListener("click", () => {
-          modals.forEach((modal) => (modal.style.display = "none"));
-        });
-      });
-
-      window.addEventListener("click", (event) => {
-        if (event.target.classList.contains("modal")) {
-          modals.forEach((modal) => (modal.style.display = "none"));
-        }
-      });
-
-      // Social Media Links
-      document.querySelectorAll(".social-media a").forEach((link) => {
-        link.addEventListener("click", (event) => {
-          event.preventDefault();
-          window.open(link.href, "_blank");
-        });
-      });
-
-      document.addEventListener('DOMContentLoaded', function() {
-    var toggleButtons = document.querySelectorAll('.details-toggle');
-
-    toggleButtons.forEach(function(button) {
-      button.addEventListener('click', function() {
-        var details = this.parentNode.nextElementSibling;
-        if (details.style.display === 'none' || details.style.display === '') {
-          details.style.display = 'block';
-          this.textContent = 'Hide Details';
-        } else {
-          details.style.display = 'none';
-          this.textContent = 'See Details';
-        }
       });
     });
-  });
 
-  let currentIndex = 0;
-        const slides = document.querySelector('.slides');
-        const descriptions = ["CSE 11th batch with honarable Vice Chancellor, Treasurer, Registrar and Faculty Member",
-        "A part of my Fire & Rescue Volunteer Team with Director General of Fire Service and Civil Defence",
-        "Recieveing farewall from honarable Department Head sir and Course Coordinator mam",
-        "Recieveing prize of 2nd Runner-up for Software Showasing event at Mind Storm 5.0 from honarable Vice Chancellor(At that time) and Department Head",
-        "Indutrial Attachment at Bangladesh Reseach and Education Network (BdREN)",
-        "Recieveing Hall farewall from honarable Vice Chancellor and Provost sir",
-        "Recieveing prize of Champion for Programming Contest event at Mind Storm 4.0 from honarable Vice Chancellor(At that time) and Department Head",
-        "Brief my research base project to the honarable Vice Chancellor(At that time)",
-        "A very proude moment for me to complete my Graduation Dinner with honarable Vice Chancellor sir",
-        "Recieveing prize of Champion for Business Plan Presentation event at BAUET Business Fest 2.0 from honarable Vice Chancellor(At that time) and President of BAUET Business CLub"];
-        
-        function showSlide(index) {
-            const totalSlides = slides.children.length;
-            if (index >= totalSlides) {
-                currentIndex = 0;
-            } else if (index < 0) {
-                currentIndex = totalSlides - 1;
-            } else {
-                currentIndex = index;
-            }
-            const offset = -currentIndex * 100;
-            slides.style.transform = `translateX(${offset}%)`;
-            document.getElementById('description').innerText = descriptions[currentIndex];
-        }
-        
-        function nextSlide() {
-            showSlide(currentIndex + 1);
-        }
-        
-        function prevSlide() {
-            showSlide(currentIndex - 1);
-        }
+    // Modals
+    const modals = document.querySelectorAll(".modal");
+    const projectLinks = document.querySelectorAll(".project-link");
+    const closeButtons = document.querySelectorAll(".close");
 
-        setInterval(nextSlide, 5000); // Change slide every 3 seconds
-
-        // Initialize the slider
-        showSlide(currentIndex);
-
-      // Initialize particles.js
-      particlesJS("particles-js", {
-        particles: {
-          number: {
-            value: 80,
-            density: {
-              enable: true,
-              value_area: 800,
-            },
-          },
-          color: {
-            value: "#337ab7",
-          },
-          shape: {
-            type: "circle",
-            stroke: {
-              width: 0,
-              color: "#000000",
-            },
-            polygon: {
-              nb_sides: 5,
-            },
-          },
-          opacity: {
-            value: 0.5,
-            random: false,
-            anim: {
-              enable: false,
-              speed: 1,
-              opacity_min: 0.1,
-              sync: false,
-            },
-          },
-          size: {
-            value: 3,
-            random: true,
-            anim: {
-              enable: false,
-              speed: 40,
-              size_min: 0.1,
-              sync: false,
-            },
-          },
-          line_linked: {
-            enable: true,
-            distance: 150,
-            color: "#337ab7",
-            opacity: 0.4,
-            width: 1,
-          },
-          move: {
-            enable: true,
-            speed: 6,
-            direction: "none",
-            random: false,
-            straight: false,
-            out_mode: "out",
-            bounce: false,
-            attract: {
-              enable: false,
-              rotateX: 600,
-              rotateY: 1200,
-            },
-          },
-        },
-        interactivity: {
-          detect_on: "canvas",
-          events: {
-            onhover: {
-              enable: true,
-              mode: "repulse",
-            },
-            onclick: {
-              enable: true,
-              mode: "push",
-            },
-            resize: true,
-          },
-          modes: {
-            grab: {
-              distance: 400,
-              line_linked: {
-                opacity: 1,
-              },
-            },
-            bubble: {
-              distance: 400,
-              size: 40,
-              duration: 2,
-              opacity: 8,
-              speed: 3,
-            },
-            repulse: {
-              distance: 200,
-              duration: 0.4,
-            },
-            push: {
-              particles_nb: 4,
-            },
-            remove: {
-              particles_nb: 2,
-            },
-          },
-        },
-        retina_detect: true,
+    projectLinks.forEach((link) => {
+      link.addEventListener("click", (event) => {
+        event.preventDefault();
+        document.getElementById(
+          link.getAttribute("data-modal")
+        ).style.display = "block";
       });
-    </script>
-  </body>
+    });
+
+    closeButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        modals.forEach((modal) => (modal.style.display = "none"));
+      });
+    });
+
+    window.addEventListener("click", (event) => {
+      if (event.target.classList.contains("modal")) {
+        modals.forEach((modal) => (modal.style.display = "none"));
+      }
+    });
+
+    // Social Media Links
+    document.querySelectorAll(".social-media a").forEach((link) => {
+      link.addEventListener("click", (event) => {
+        event.preventDefault();
+        window.open(link.href, "_blank");
+      });
+    });
+
+    document.addEventListener('DOMContentLoaded', function () {
+      var toggleButtons = document.querySelectorAll('.details-toggle');
+
+      toggleButtons.forEach(function (button) {
+        button.addEventListener('click', function () {
+          var details = this.parentNode.nextElementSibling;
+          if (details.style.display === 'none' || details.style.display === '') {
+            details.style.display = 'block';
+            this.textContent = 'Hide Details';
+          } else {
+            details.style.display = 'none';
+            this.textContent = 'See Details';
+          }
+        });
+      });
+    });
+
+    let currentIndex = 0;
+    const slides = document.querySelector('.slides');
+    const descriptions = ["CSE 11th batch with honarable Vice Chancellor, Treasurer, Registrar and Faculty Member",
+      "A part of my Fire & Rescue Volunteer Team with Director General of Fire Service and Civil Defence",
+      "Recieveing farewall from honarable Department Head sir and Course Coordinator mam",
+      "Recieveing prize of 2nd Runner-up for Software Showasing event at Mind Storm 5.0 from honarable Vice Chancellor(At that time) and Department Head",
+      "Indutrial Attachment at Bangladesh Reseach and Education Network (BdREN)",
+      "Recieveing Hall farewall from honarable Vice Chancellor and Provost sir",
+      "Recieveing prize of Champion for Programming Contest event at Mind Storm 4.0 from honarable Vice Chancellor(At that time) and Department Head",
+      "Brief my research base project to the honarable Vice Chancellor(At that time)",
+      "A very proude moment for me to complete my Graduation Dinner with honarable Vice Chancellor sir",
+      "Recieveing prize of Champion for Business Plan Presentation event at BAUET Business Fest 2.0 from honarable Vice Chancellor(At that time) and President of BAUET Business CLub"];
+
+    function showSlide(index) {
+      const totalSlides = slides.children.length;
+      if (index >= totalSlides) {
+        currentIndex = 0;
+      } else if (index < 0) {
+        currentIndex = totalSlides - 1;
+      } else {
+        currentIndex = index;
+      }
+      const offset = -currentIndex * 100;
+      slides.style.transform = `translateX(${offset}%)`;
+      document.getElementById('description').innerText = descriptions[currentIndex];
+    }
+
+    function nextSlide() {
+      showSlide(currentIndex + 1);
+    }
+
+    function prevSlide() {
+      showSlide(currentIndex - 1);
+    }
+
+    setInterval(nextSlide, 5000); // Change slide every 3 seconds
+
+    // Initialize the slider
+    showSlide(currentIndex);
+
+    // Initialize particles.js
+    particlesJS("particles-js", {
+      particles: {
+        number: {
+          value: 80,
+          density: {
+            enable: true,
+            value_area: 800,
+          },
+        },
+        color: {
+          value: "#337ab7",
+        },
+        shape: {
+          type: "circle",
+          stroke: {
+            width: 0,
+            color: "#000000",
+          },
+          polygon: {
+            nb_sides: 5,
+          },
+        },
+        opacity: {
+          value: 0.5,
+          random: false,
+          anim: {
+            enable: false,
+            speed: 1,
+            opacity_min: 0.1,
+            sync: false,
+          },
+        },
+        size: {
+          value: 3,
+          random: true,
+          anim: {
+            enable: false,
+            speed: 40,
+            size_min: 0.1,
+            sync: false,
+          },
+        },
+        line_linked: {
+          enable: true,
+          distance: 150,
+          color: "#337ab7",
+          opacity: 0.4,
+          width: 1,
+        },
+        move: {
+          enable: true,
+          speed: 6,
+          direction: "none",
+          random: false,
+          straight: false,
+          out_mode: "out",
+          bounce: false,
+          attract: {
+            enable: false,
+            rotateX: 600,
+            rotateY: 1200,
+          },
+        },
+      },
+      interactivity: {
+        detect_on: "canvas",
+        events: {
+          onhover: {
+            enable: true,
+            mode: "repulse",
+          },
+          onclick: {
+            enable: true,
+            mode: "push",
+          },
+          resize: true,
+        },
+        modes: {
+          grab: {
+            distance: 400,
+            line_linked: {
+              opacity: 1,
+            },
+          },
+          bubble: {
+            distance: 400,
+            size: 40,
+            duration: 2,
+            opacity: 8,
+            speed: 3,
+          },
+          repulse: {
+            distance: 200,
+            duration: 0.4,
+          },
+          push: {
+            particles_nb: 4,
+          },
+          remove: {
+            particles_nb: 2,
+          },
+        },
+      },
+      retina_detect: true,
+    });
+  </script>
+</body>
+
 </html>
