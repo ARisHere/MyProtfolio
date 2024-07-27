@@ -350,7 +350,8 @@
 
 
     .skills-container {
-      display: flex;
+      width: 100%;
+      display: table;
       flex-wrap: wrap;
     }
 
@@ -359,15 +360,14 @@
       border-radius: 5px;
       padding: 10px;
       margin: 5px;
-      margin-right: 80px;
       display: flex;
       align-items: center;
     }
 
     .skill-box i {
-      margin-right: 10px;
-      color: #555;
-    }
+    margin-right: 10px; /* Adjust the space between the icon and the text */
+  }
+
 
     .work-container {
       width: 100%;
@@ -423,6 +423,7 @@
 
     /* Education Styles */
     .education-container {
+      width: 100%;
       display: flex;
       flex-wrap: wrap;
     }
@@ -759,7 +760,7 @@
     <section id="work-experience" class="section">
       <h2>WORK EXPERIENCE</h2>
       <ul class="work-container">
-        <li class="work-item">
+        <div class="work-item">
           <i class="fas fa-laptop-code"></i>
           <div>
             <h3>Intern - Software Development</h3>
@@ -769,8 +770,8 @@
               <a href="https://shebawebtech.com/" target="_blank">Website</a>
             </p>
           </div>
-        </li>
-        <li class="work-item">
+        </div>
+        <div class="work-item">
           <i class="fas fa-network-wired"></i>
           <div>
             <h3>Intern - Diverse Theoretical and Hands-on Activity</h3>
@@ -782,7 +783,7 @@
               <a href="https://www.bdren.net.bd/" target="_blank">Website</a>
             </p>
           </div>
-        </li>
+        </div>
       </ul>
     </section>
     <section id="education" class="section">
@@ -1269,66 +1270,59 @@
 
     <section id="community" class="section">
       <h2>COMMUNITY INVOLVEMENT</h2>
-      <ul class="community-container">
-        <li class="community-item">
+      <div class="community-container">
+        <div class="community-item">
           <i class="fas fa-hand-holding-heart"></i>
           <div>
             <h3>Red Crescent Youth</h3>
-            <p><strong>Organization:</strong> Bangladesh Red Crescent Society, Rajshahi City Unit
-            </p>
+            <p><strong>Organization:</strong> Bangladesh Red Crescent Society, Rajshahi City Unit</p>
             <p><strong>Date: </strong>October 2015 - August 2018</p>
           </div>
-        </li>
-        <li class="community-item">
+        </div>
+        <div class="community-item">
           <i class="fas fa-trophy"></i>
           <div>
             <h3>District Leader</h3>
             <p><strong>Organization: </strong>ICT Olympiad Bangladesh, Rajshahi</p>
             <p><strong>Date: </strong>May 2022 - Feb 2023</p>
           </div>
-        </li>
-        <li class="community-item">
-          <i class="fas fa-lightbulb"></i>
-        </li>
-        <li class="community-item">
+        </div>
+        <div class="community-item">
           <i class="fas fa-fire-extinguisher"></i>
           <div>
             <h3>Fire and Rescue Volunteer</h3>
-            <p><strong>Organization: </strong>Fire Service and Civil Defence, Rajshahi
-            </p>
+            <p><strong>Organization: </strong>Fire Service and Civil Defence, Rajshahi</p>
             <p><strong>Date: </strong>April 2016 - Present</p>
           </div>
-        </li>
-        <li class="community-item">
+        </div>
+        <div class="community-item">
           <i class="fas fa-user-shield"></i>
           <div>
             <h3>Cadet</h3>
             <p><strong>Organization: </strong>Bangladesh National Cadet Core, Mohasthan Regiment (BAUET Platoon)</p>
             <p><strong>Date: </strong>November 2020 - Present</p>
           </div>
-        </li>
-        <li class="community-item">
+        </div>
+        <div class="community-item">
           <i class="fas fa-user-tie"></i>
           <div>
             <h3>HR Secretary</h3>
-            <p><strong>Organization: </strong>BAUET Computer Society, Bangladesh Army University of Engineering &
-              Technology (BAUET)
-            </p>
+            <p><strong>Organization: </strong>BAUET Computer Society, Bangladesh Army University of Engineering & Technology (BAUET)</p>
             <p><strong>Date: </strong>June 2023 - Present</p>
           </div>
-        </li>
-        <li class="community-item">
+        </div>
+        <div class="community-item">
           <i class="fas fa-users-cog"></i>
           <div>
             <h3>Organizing Secretary</h3>
-            <p><strong>Organization: </strong>BAUET Business Club, Bangladesh Army University of Engineering &
-              Technology (BAUET)
-            </p>
+            <p><strong>Organization: </strong>BAUET Business Club, Bangladesh Army University of Engineering & Technology (BAUET)</p>
             <p><strong>Date: </strong>December 2023 - Present</p>
           </div>
-        </li>
-      </ul>
+        </div>
+      </div>
     </section>
+    
+
     <section id="skills" class="section">
       <h2>SKILLS</h2>
       <ul class="skills-container">
@@ -1342,46 +1336,58 @@
           </div>
         </li>
         <li>
-          <h3>Programming:</h3>
-          <div class="skill-box"><i class="fab fa-html5"></i>HTML</div>
-          <div class="skill-box"><i class="fab fa-css3-alt"></i>CSS</div>
+          <h3>Programming Languages:</h3>
           <div class="skill-box"><i class="fas fa-code"></i>C</div>
           <div class="skill-box"><i class="fas fa-code"></i>C++</div>
           <div class="skill-box"><i class="fab fa-java"></i>JAVA</div>
           <div class="skill-box"><i class="fab fa-python"></i>Python</div>
-          <div class="skill-box"><i class="fas fa-database"></i>MySQL</div>
         </li>
         <li>
-          <h3>IDE:</h3>
-          <div class="skill-box">
-            <i class="fab fa-android"></i>Android Studio
-          </div>
-          <div class="skill-box">
-            <i class="fas fa-code"></i>Visual Studio Code
-          </div>
+          <h3>Query Language:</h3>
+          <div class="skill-box"><i class="fas fa-database"></i>SQL</div>
+        </li>
+        <li>
+          <h3>Web Technologies:</h3>
+          <div class="skill-box"><i class="fab fa-html5"></i>HTML</div>
+          <div class="skill-box"><i class="fab fa-css3-alt"></i>CSS</div>
+          <div class="skill-box"><i class="fab fa-js-square"></i>JavaScript</div>
+        </li>
+        <li>
+          <h3>Developer Tools:</h3>
+          <div class="skill-box"><i class="fab fa-android"></i>Android Studio</div>
+          <div class="skill-box"><i class="fas fa-code"></i>Visual Studio Code</div>
           <div class="skill-box"><i class="fab fa-python"></i>Anaconda</div>
-          <div class="skill-box">
-            <i class="fas fa-flask"></i>Google Colab
-          </div>
+        </li>
+        <li>
+          <h3>Frameworks and Libraries:</h3>
+          <div class="skill-box"><i class="fas fa-project-diagram"></i>Scikit</div>
+          <div class="skill-box"><i class="fas fa-table"></i>Pandas</div>
+          <div class="skill-box"><i class="fas fa-square-root-alt"></i>NumPy</div>
+          <div class="skill-box"><i class="fas fa-camera"></i>OpenCV</div>
+          <div class="skill-box"><i class="fas fa-chart-line"></i>MatPlotLib</div>
+          <div class="skill-box"><i class="fas fa-brain"></i>PyTorch</div>
+          <div class="skill-box"><i class="fas fa-palette"></i>SeaBorn</div>
+          <div class="skill-box"><i class="fas fa-vial"></i>Deseq2</div>
+          <div class="skill-box"><i class="fas fa-laptop-code"></i>Django</div>
         </li>
         <li>
           <h3>Document Creation:</h3>
-          <div class="skill-box">
-            <i class="fas fa-file-word"></i>Microsoft Office
-          </div>
+          <div class="skill-box"><i class="fas fa-file-word"></i>Microsoft Office</div>
           <div class="skill-box"><i class="fas fa-file-alt"></i>LaTeX</div>
         </li>
         <li>
+          <h3>Platforms:</h3>
+          <div class="skill-box"><i class="fab fa-windows"></i>Windows</div>
+          <div class="skill-box"><i class="fab fa-linux"></i>Linux</div>
+        </li>
+        <li>
           <h3>Others:</h3>
-          <div class="skill-box">
-            <i class="fas fa-calendar-alt"></i>Event Management
-          </div>
-          <div class="skill-box">
-            <i class="fas fa-users"></i>Team Management
-          </div>
+          <div class="skill-box"><i class="fas fa-calendar-alt"></i>Event Management</div>
+          <div class="skill-box"><i class="fas fa-tasks"></i>Project Management</div>
         </li>
       </ul>
     </section>
+
   </main>
   <footer>
     <p>© 2024 Md. Ahadur Rohman Ahad. All rights reserved.</p>
