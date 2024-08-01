@@ -368,6 +368,23 @@
     margin-right: 10px; /* Adjust the space between the icon and the text */
   }
 
+  .skill-level {
+  display: flex;
+  margin-left: auto;
+  gap: 5px; /* space between dots */
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #ccc; /* transparent dot */
+}
+
+.dot.filled {
+  background-color: #000; /* colored dot */
+}
+
 
     .work-container {
       width: 100%;
@@ -763,7 +780,7 @@
         <div class="work-item">
           <i class="fas fa-laptop-code"></i>
           <div>
-            <h3>Intern - Software Development</h3>
+            <h3>Intern<i> - Software Development</i></h3>
             <p>SheBa Web Technology LLC</p>
             <p>May 2023 - August 2023</p>
             <p>
@@ -774,7 +791,7 @@
         <div class="work-item">
           <i class="fas fa-network-wired"></i>
           <div>
-            <h3>Intern - Diverse Theoretical and Hands-on Activity</h3>
+            <h3>Intern<i> - Diverse Theoretical and Hands-on Activity</i></h3>
             <p>
               Bangladesh Research and Education Network (BdREN)
             </p>
@@ -834,7 +851,7 @@
         <div class="project-item">
           <i class="fa fa-code"></i>
           <div>
-            <h3>Search Engine on Data Structure - C++</h3>
+            <h3>Search Engine on Data Structure<i> - C++</i></h3>
             <p><strong>Institution:</strong> Bangladesh Army University of Engineering & Technology (BAUET)</p>
             <p><strong>Date:</strong> October 2021</p>
             <div class="project-actions">
@@ -852,7 +869,7 @@
         <div class="project-item">
           <i class="fa fa-code"></i>
           <div>
-            <h3>Contact Management System to find Blood Donor - C++</h3>
+            <h3>Contact Management System to find Blood Donor<i> - C++</i></h3>
             <p><strong>Institution:</strong> Bangladesh Army University of Engineering & Technology (BAUET)</p>
             <p><strong>Date:</strong> March 2022</p>
             <div class="project-actions">
@@ -870,7 +887,7 @@
         <div class="project-item">
           <i class="fa fa-code"></i>
           <div>
-            <h3>Library Management System - Java</h3>
+            <h3>Library Management System<i> - Java</i></h3>
             <p><strong>Institution:</strong> Bangladesh Army University of Engineering & Technology (BAUET)</p>
             <p><strong>Date:</strong> February 2022</p>
             <div class="project-actions">
@@ -888,7 +905,7 @@
         <div class="project-item">
           <i class="fa fa-code"></i>
           <div>
-            <h3>Change Maker - Java, Android Studio</h3>
+            <h3>Change Maker<i> - Java, Android Studio</i></h3>
             <p><strong>Institution:</strong> Bangladesh Army University of Engineering & Technology (BAUET)</p>
             <p><strong>Date:</strong> April 2022</p>
             <div class="project-actions">
@@ -906,7 +923,7 @@
         <div class="project-item">
           <i class="fa fa-code"></i>
           <div>
-            <h3>The Modern City Originator - Java, Android Studio</h3>
+            <h3>The Modern City Originator<i> - Java, Android Studio</i></h3>
             <p><strong>Institution:</strong> Bangladesh Army University of Engineering & Technology (BAUET)</p>
             <p><strong>Date:</strong> November 2022</p>
             <div class="project-actions">
@@ -924,7 +941,7 @@
         <div class="project-item">
           <i class="fa fa-code"></i>
           <div>
-            <h3>DocSoln - HTML, CSS, JavaScript, Django</h3>
+            <h3>DocSoln<i> - HTML, CSS, JavaScript, Django</i></h3>
             <p><strong>Institution:</strong> Bangladesh Army University of Engineering & Technology (BAUET)</p>
             <p><strong>Date:</strong> October 2022</p>
             <div class="project-actions">
@@ -941,7 +958,7 @@
         <div class="project-item">
           <i class="fa fa-code"></i>
           <div>
-            <h3>ProfessionalBD - Android Studio, Node JS</h3>
+            <h3>ProfessionalBD<i> - Android Studio, Node JS</i></h3>
             <p><strong>Company:</strong> SheBa Web Technology LLC</p>
             <p><strong>Date:</strong> June 2023</p>
             <div class="project-actions">
@@ -959,7 +976,7 @@
         <div class="project-item">
           <i class="fa fa-code"></i>
           <div>
-            <h3>SheBa IT Academy - Android Studio, Firebase</h3>
+            <h3>SheBa IT Academy<i> - Android Studio, Firebase</i></h3>
             <p><strong>Company:</strong> SheBa Web Technology LLC</p>
             <p><strong>Date:</strong> August 2023</p>
             <div class="project-actions">
@@ -977,7 +994,7 @@
         <div class="project-item">
           <i class="fa fa-code"></i>
           <div>
-            <h3>AgriStairs - Android Studio, Machine Learning</h3>
+            <h3>AgriStairs<i> - Android Studio, Machine Learning</i></h3>
             <p><strong>Institution:</strong> Bangladesh Army University of Engineering & Technology (BAUET)</p>
             <p><strong>Date:</strong> October 2023</p>
             <div class="project-actions">
@@ -995,7 +1012,7 @@
         <div class="project-item">
           <i class="fa fa-code"></i>
           <div>
-            <h3>DX Ball - Computer Graphics, C++ (GLUT)</h3>
+            <h3>DX Ball<i> - Computer Graphics, C++ (GLUT)</i></h3>
             <p><strong>Institution:</strong> Bangladesh Army University of Engineering & Technology (BAUET)</p>
             <p><strong>Date:</strong> March 2024</p>
             <div class="project-actions">
@@ -1013,7 +1030,7 @@
         <div class="project-item">
           <i class="fa fa-code"></i>
           <div>
-            <h3>Personal Portfolio - HTML, CSS & Java Script</h3>
+            <h3>Personal Portfolio<i> - HTML, CSS & Java Script</i></h3>
             <p><strong>Website:</strong> www.arishere.netlify.app</p>
             <p><strong>Date:</strong> June 2024</p>
             <div class="project-actions">
@@ -1035,8 +1052,8 @@
           <i class="fa fa-flask"></i>
           <div>
             <h3>
-              Crop disease detection using Convolution Neural Network -
-              Machine Learning
+              Crop Disease Detection using Convolution Neural Network
+              <i> - Machine Learning</i>
             </h3>
             <p>
               <strong>Institution:</strong> Bangladesh Army University of
@@ -1049,8 +1066,8 @@
           <i class="fa fa-flask"></i>
           <div>
             <h3>
-              A Review Paper on MRI-based Brain Tumor Detection - Machine
-              Learning
+              A Review Paper on MRI-based Brain Tumor Detection
+              <i> - Machine Learning</i>
             </h3>
             <p>
               <strong>Institution:</strong> Bangladesh Army University of
@@ -1063,8 +1080,8 @@
           <i class="fa fa-flask"></i>
           <div>
             <h3>
-              Prognosis and Therapeutic Insights of Thalassemia -
-              Bioinformatics
+              Prognosis and Therapeutic Insights of Thalassemia
+              <i> - Bioinformatics</i>
             </h3>
             <p>
               <strong>Institution:</strong> Bangladesh Army University of
@@ -1082,7 +1099,7 @@
         <div class="achievement-item">
           <i class="fa fa-trophy"></i>
           <div>
-            <h3>Champion | Programming Contest</h3>
+            <h3>Champion<i> - Programming Contest</i></h3>
             <p><strong>Event:</strong> Mind Storm 4.0</p>
             <p>
               <strong>Institution:</strong> Bangladesh Army University of
@@ -1093,7 +1110,7 @@
         <div class="achievement-item">
           <i class="fa fa-trophy"></i>
           <div>
-            <h3>Champion | Business Plan Presentation</h3>
+            <h3>Champion<i> - Business Plan Presentation</i></h3>
             <p><strong>Event:</strong> BAUET Business Fest 2.0</p>
             <p>
               <strong>Institution:</strong> Bangladesh Army University of
@@ -1104,7 +1121,7 @@
         <div class="achievement-item">
           <i class="fa fa-trophy"></i>
           <div>
-            <h3>2nd Runners Up | Software Development</h3>
+            <h3>2nd Runners Up</h3>
             <p><strong>Event:</strong> Mind Storm 4.0</p>
             <p>
               <strong>Institution:</strong> Bangladesh Army University of
@@ -1115,7 +1132,7 @@
         <div class="achievement-item">
           <i class="fa fa-trophy"></i>
           <div>
-            <h3>2nd Runners Up | Software Development</h3>
+            <h3>2nd Runners Up<i> - Software Development</i></h3>
             <p><strong>Event:</strong> Mind Storm 5.0</p>
             <p>
               <strong>Institution:</strong> Bangladesh Army University of
@@ -1329,65 +1346,258 @@
         <li>
           <h3>Languages:</h3>
           <div class="skill-box">
-            <i class="fas fa-language"></i>Bengali (Native)
+            <i class="fas fa-language"></i> Bengali (Native)
+            <span class="skill-level">
+              <span class="dot filled"></span>
+              <span class="dot filled"></span>
+              <span class="dot filled"></span>
+            </span>
           </div>
           <div class="skill-box">
-            <i class="fas fa-language"></i>English (B1)
+            <i class="fas fa-language"></i> English (B1)
+            <span class="skill-level">
+              <span class="dot filled"></span>
+              <span class="dot filled"></span>
+              <span class="dot"></span>
+            </span>
           </div>
         </li>
         <li>
           <h3>Programming Languages:</h3>
-          <div class="skill-box"><i class="fas fa-code"></i>C</div>
-          <div class="skill-box"><i class="fas fa-code"></i>C++</div>
-          <div class="skill-box"><i class="fab fa-java"></i>JAVA</div>
-          <div class="skill-box"><i class="fab fa-python"></i>Python</div>
+          <div class="skill-box">
+            <i class="fas fa-code"></i> C
+            <span class="skill-level">
+              <span class="dot filled"></span>
+              <span class="dot filled"></span>
+              <span class="dot"></span>
+            </span>
+          </div>
+          <div class="skill-box">
+            <i class="fas fa-code"></i> C++
+            <span class="skill-level">
+              <span class="dot filled"></span>
+              <span class="dot filled"></span>
+              <span class="dot"></span>
+            </span>
+          </div>
+          <div class="skill-box">
+            <i class="fab fa-java"></i> JAVA
+            <span class="skill-level">
+              <span class="dot filled"></span>
+              <span class="dot filled"></span>
+              <span class="dot"></span>
+            </span>
+          </div>
+          <div class="skill-box">
+            <i class="fab fa-python"></i> Python
+            <span class="skill-level">
+              <span class="dot filled"></span>
+              <span class="dot filled"></span>
+              <span class="dot filled"></span>
+            </span>
+          </div>
         </li>
         <li>
           <h3>Query Language:</h3>
-          <div class="skill-box"><i class="fas fa-database"></i>SQL</div>
+          <div class="skill-box">
+            <i class="fas fa-database"></i> SQL
+            <span class="skill-level">
+              <span class="dot filled"></span>
+              <span class="dot filled"></span>
+              <span class="dot filled"></span>
+            </span>
+          </div>
         </li>
         <li>
           <h3>Web Technologies:</h3>
-          <div class="skill-box"><i class="fab fa-html5"></i>HTML</div>
-          <div class="skill-box"><i class="fab fa-css3-alt"></i>CSS</div>
-          <div class="skill-box"><i class="fab fa-js-square"></i>JavaScript</div>
+          <div class="skill-box">
+            <i class="fab fa-html5"></i> HTML
+            <span class="skill-level">
+              <span class="dot filled"></span>
+              <span class="dot filled"></span>
+              <span class="dot filled"></span>
+            </span>
+          </div>
+          <div class="skill-box">
+            <i class="fab fa-css3-alt"></i> CSS
+            <span class="skill-level">
+              <span class="dot filled"></span>
+              <span class="dot filled"></span>
+              <span class="dot"></span>
+            </span>
+          </div>
+          <div class="skill-box">
+            <i class="fab fa-js-square"></i> JavaScript
+            <span class="skill-level">
+              <span class="dot filled"></span>
+              <span class="dot filled"></span>
+              <span class="dot"></span>
+            </span>
+          </div>
         </li>
         <li>
           <h3>Developer Tools:</h3>
-          <div class="skill-box"><i class="fab fa-android"></i>Android Studio</div>
-          <div class="skill-box"><i class="fas fa-code"></i>Visual Studio Code</div>
-          <div class="skill-box"><i class="fab fa-python"></i>Anaconda</div>
+          <div class="skill-box">
+            <i class="fab fa-android"></i> Android Studio
+            <span class="skill-level">
+              <span class="dot filled"></span>
+              <span class="dot filled"></span>
+              <span class="dot"></span>
+            </span>
+          </div>
+          <div class="skill-box">
+            <i class="fas fa-code"></i> Visual Studio Code
+            <span class="skill-level">
+              <span class="dot filled"></span>
+              <span class="dot filled"></span>
+              <span class="dot filled"></span>
+            </span>
+          </div>
+          <div class="skill-box">
+            <i class="fab fa-python"></i> Anaconda
+            <span class="skill-level">
+              <span class="dot filled"></span>
+              <span class="dot filled"></span>
+              <span class="dot filled"></span>
+            </span>
+          </div>
         </li>
         <li>
           <h3>Frameworks and Libraries:</h3>
-          <div class="skill-box"><i class="fas fa-project-diagram"></i>Scikit</div>
-          <div class="skill-box"><i class="fas fa-table"></i>Pandas</div>
-          <div class="skill-box"><i class="fas fa-square-root-alt"></i>NumPy</div>
-          <div class="skill-box"><i class="fas fa-camera"></i>OpenCV</div>
-          <div class="skill-box"><i class="fas fa-chart-line"></i>MatPlotLib</div>
-          <div class="skill-box"><i class="fas fa-brain"></i>PyTorch</div>
-          <div class="skill-box"><i class="fas fa-palette"></i>SeaBorn</div>
-          <div class="skill-box"><i class="fas fa-vial"></i>Deseq2</div>
-          <div class="skill-box"><i class="fas fa-laptop-code"></i>Django</div>
+          <div class="skill-box">
+            <i class="fas fa-project-diagram"></i> Scikit
+            <span class="skill-level">
+              <span class="dot filled"></span>
+              <span class="dot filled"></span>
+              <span class="dot"></span>
+            </span>
+          </div>
+          <div class="skill-box">
+            <i class="fas fa-table"></i> Pandas
+            <span class="skill-level">
+              <span class="dot filled"></span>
+              <span class="dot filled"></span>
+              <span class="dot filled"></span>
+            </span>
+          </div>
+          <div class="skill-box">
+            <i class="fas fa-square-root-alt"></i> NumPy
+            <span class="skill-level">
+              <span class="dot filled"></span>
+              <span class="dot filled"></span>
+              <span class="dot filled"></span>
+            </span>
+          </div>
+          <div class="skill-box">
+            <i class="fas fa-camera"></i> OpenCV
+            <span class="skill-level">
+              <span class="dot filled"></span>
+              <span class="dot filled"></span>
+              <span class="dot"></span>
+            </span>
+          </div>
+          <div class="skill-box">
+            <i class="fas fa-chart-line"></i> MatPlotLib
+            <span class="skill-level">
+              <span class="dot filled"></span>
+              <span class="dot filled"></span>
+              <span class="dot filled"></span>
+            </span>
+          </div>
+          <div class="skill-box">
+            <i class="fas fa-brain"></i> PyTorch
+            <span class="skill-level">
+              <span class="dot filled"></span>
+              <span class="dot filled"></span>
+              <span class="dot"></span>
+            </span>
+          </div>
+          <div class="skill-box">
+            <i class="fas fa-palette"></i> SeaBorn
+            <span class="skill-level">
+              <span class="dot filled"></span>
+              <span class="dot filled"></span>
+              <span class="dot"></span>
+            </span>
+          </div>
+          <div class="skill-box">
+            <i class="fas fa-vial"></i> Deseq2
+            <span class="skill-level">
+              <span class="dot filled"></span>
+              <span class="dot filled"></span>
+              <span class="dot filled"></span>
+            </span>
+          </div>
+          <div class="skill-box">
+            <i class="fas fa-laptop-code"></i> Django
+            <span class="skill-level">
+              <span class="dot filled"></span>
+              <span class="dot filled"></span>
+              <span class="dot"></span>
+            </span>
+          </div>
         </li>
         <li>
           <h3>Document Creation:</h3>
-          <div class="skill-box"><i class="fas fa-file-word"></i>Microsoft Office</div>
-          <div class="skill-box"><i class="fas fa-file-alt"></i>LaTeX</div>
+          <div class="skill-box">
+            <i class="fas fa-file-word"></i> Microsoft Office
+            <span class="skill-level">
+              <span class="dot filled"></span>
+              <span class="dot filled"></span>
+              <span class="dot filled"></span>
+            </span>
+          </div>
+          <div class="skill-box">
+            <i class="fas fa-file-alt"></i> LaTeX
+            <span class="skill-level">
+              <span class="dot filled"></span>
+              <span class="dot filled"></span>
+              <span class="dot"></span>
+            </span>
+          </div>
         </li>
         <li>
           <h3>Platforms:</h3>
-          <div class="skill-box"><i class="fab fa-windows"></i>Windows</div>
-          <div class="skill-box"><i class="fab fa-linux"></i>Linux</div>
+          <div class="skill-box">
+            <i class="fab fa-windows"></i> Windows
+            <span class="skill-level">
+              <span class="dot filled"></span>
+              <span class="dot filled"></span>
+              <span class="dot filled"></span>
+            </span>
+          </div>
+          <div class="skill-box">
+            <i class="fab fa-linux"></i> Linux
+            <span class="skill-level">
+              <span class="dot filled"></span>
+              <span class="dot filled"></span>
+              <span class="dot"></span>
+            </span>
+          </div>
         </li>
         <li>
           <h3>Others:</h3>
-          <div class="skill-box"><i class="fas fa-calendar-alt"></i>Event Management</div>
-          <div class="skill-box"><i class="fas fa-tasks"></i>Project Management</div>
+          <div class="skill-box">
+            <i class="fas fa-calendar-alt"></i> Event Management
+            <span class="skill-level">
+              <span class="dot filled"></span>
+              <span class="dot filled"></span>
+              <span class="dot filled"></span>
+            </span>
+          </div>
+          <div class="skill-box">
+            <i class="fas fa-tasks"></i> Project Management
+            <span class="skill-level">
+              <span class="dot filled"></span>
+              <span class="dot filled"></span>
+              <span class="dot filled"></span>
+            </span>
+          </div>
         </li>
       </ul>
     </section>
-
+    
+    
   </main>
   <footer>
     <p>© 2024 Md. Ahadur Rohman Ahad. All rights reserved.</p>
